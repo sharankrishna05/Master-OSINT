@@ -94,7 +94,8 @@ class DeepPublicReconSuite:
         if t.startswith("as") and re.match(r'^as\d+$', t):
             return f"{t}.bgp.net"
         if re.sub(r'\D', '', t).startswith("91") or (len(re.sub(r'\D', '', t)) in [10, 11, 12] and not any(c in t for c in "abcdefghijklmnopqrstuvwxyz")):
-            return f"tel-{re.sub(r'\\D', '', t)[-10:]}.carrier.net"
+            digits = re.sub(r'\D', '', t)
+            return f"tel-{digits[-10:]}.carrier.net"
         if "aditya" in t:
             return "adityauniversity.in"
         clean_slug = re.sub(r'[^a-z0-9-]', '', t)

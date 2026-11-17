@@ -681,7 +681,7 @@ class UniversalOsintSuite:
         return {
             "target": clean,
             "google_dorks": [
-                {"category": "Exposed Credentials & Configs", "purpose": "Sensitive .env, config, and credential files", "query": f'site:{clean} (ext:env OR ext:yml OR ext:yaml OR ext:conf OR ext:cfg) "password"', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} (ext:env OR ext:yml OR ext:yaml OR ext:conf OR ext:cfg) \"password\"")}'},
+                {"category": "Exposed Credentials & Configs", "purpose": "Sensitive .env, config, and credential files", "query": f'site:{clean} (ext:env OR ext:yml OR ext:yaml OR ext:conf OR ext:cfg) "password"', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} (ext:env OR ext:yml OR ext:yaml OR ext:conf OR ext:cfg) password")}'},
                 {"category": "Directory Indexing", "purpose": "Open server directories revealing internal trees", "query": f'site:{clean} intitle:"Index of /" OR intitle:"parent directory"', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} intitle:\"Index of /\" OR intitle:\"parent directory\"")}'},
                 {"category": "Database Backups & Dumps", "purpose": "Exposed SQL dumps, raw schemas, and tables", "query": f'site:{clean} ext:sql OR ext:dump OR ext:bak OR ext:tar OR ext:zip', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} ext:sql OR ext:dump OR ext:bak OR ext:tar OR ext:zip")}'},
                 {"category": "Administrative Entrypoints", "purpose": "Sign-in portals, SSO panels, and admin portals", "query": f'site:{clean} inurl:admin OR inurl:login OR inurl:portal OR inurl:cpanel', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} inurl:admin OR inurl:login OR inurl:portal OR inurl:cpanel")}'},
@@ -1370,4 +1370,3 @@ class UniversalOsintSuite:
 
 
 universal_osint_suite = UniversalOsintSuite()
-

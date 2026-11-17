@@ -108,6 +108,8 @@ async def index(request: Request):
     return templates.TemplateResponse("index.html", {
         "request": request,
         "recent": recent,
+        "auth_allow_registration": os.getenv("ARSENAL_ALLOW_REGISTRATION", "1") == "1",
+        "auth_allow_google": os.getenv("ARSENAL_ALLOW_GOOGLE_AUTH", "1") == "1",
         "stats": {
             "tools": len(ds.tools),
             "categories": len(ds.categories),

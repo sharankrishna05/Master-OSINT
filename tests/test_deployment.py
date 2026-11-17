@@ -113,6 +113,23 @@ def test_production_auth_gate_and_disabled_auth_flows(monkeypatch):
     ).status_code == 403
 
 
+def test_login_page_hides_disabled_auth_options(monkeypatch):
+    from osint_arsenal import config
+
+    monkeypatch.setattr(config.settings, "require_auth", True)
+    monkeypatch.setenv("ARSENAL_ALLOW_REGISTRATION", "0")
+    monkeypatch.setenv("ARSENAL_ALLOW_GOOGLE_AUTH", "0")
+    client = TestClient(create_app())
+
+    response = client.get("/")
+
+    assert response.status_code == 200
+    assert 'id="auth-tab-btn-register"' not in response.text
+    assert 'id="auth-register-form"' not in response.text
+    assert "Sign in with Google" not in response.text
+    assert "ARSENAL_ADMIN_EMAIL" in response.text
+
+
 def test_authenticated_api_allowed_in_production(monkeypatch):
     from osint_arsenal import config
     import osint_arsenal.api.server as server

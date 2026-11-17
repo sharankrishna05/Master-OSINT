@@ -87,3 +87,42 @@ def test_admin_access_removed_from_ui_and_api(tmp_path, monkeypatch):
     assert "SHARAN.VAKA" not in html
     assert "Sharan@OSINT2026" not in html
 
+
+def test_production_auth_gate_and_disabled_auth_flows(monkeypatch):
+    from osint_arsenal import config
+    import osint_arsenal.api.server as server
+
+    monkeypatch.setattr(config.settings, "require_auth", True)
+    monkeypatch.setattr(server, "get_current_user_optional", lambda request: None)
+    monkeypatch.setenv("ARSENAL_ALLOW_REGISTRATION", "0")
+    monkeypatch.setenv("ARSENAL_ALLOW_GOOGLE_AUTH", "0")
+    client = TestClient(create_app())
+
+    assert client.get("/api/v2/providers").status_code == 401
+    assert client.post("/hub/api/scan", json={}).status_code == 401
+    assert client.get("/intelbase/lookup?email=test@example.com").status_code == 401
+    assert client.get("/reports/private.html").status_code == 401
+    assert client.get("/api/v2/auth/me").status_code == 200
+    assert client.post(
+        "/api/v2/auth/register",
+        json={"email": "new@example.com", "password": "long-enough", "name": "New"},
+    ).status_code == 403
+    assert client.post(
+        "/api/v2/auth/google",
+        json={"email": "new@example.com"},
+    ).status_code == 403
+
+
+def test_authenticated_api_allowed_in_production(monkeypatch):
+    from osint_arsenal import config
+    import osint_arsenal.api.server as server
+
+    monkeypatch.setattr(config.settings, "require_auth", True)
+    monkeypatch.setattr(
+        server,
+        "get_current_user_optional",
+        lambda request: {"id": "test-user", "role": "admin"},
+    )
+    client = TestClient(create_app())
+
+    assert client.get("/api/v2/providers").status_code == 200

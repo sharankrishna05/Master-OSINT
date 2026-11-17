@@ -31,6 +31,7 @@ class Settings:
     cors_origin: str = os.getenv("ARSENAL_CORS", "*")
     user_agent: str = os.getenv("ARSENAL_UA",
                                 "Mozilla/5.0 (compatible; OsintArsenal/0.2)")
+    require_auth: bool = os.getenv("ARSENAL_REQUIRE_AUTH", "0") == "1"
 
     max_followups: int = int(os.getenv("ARSENAL_MAX_FOLLOWUPS", "3"))
     followup_depth: int = int(os.getenv("ARSENAL_FOLLOWUP_DEPTH", "2"))

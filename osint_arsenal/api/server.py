@@ -1,11 +1,12 @@
 from __future__ import annotations
 import os
 from pathlib import Path
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from .routes import router
+from .routes import get_current_user_optional, router
 from ..config import settings
 
 
@@ -24,6 +25,30 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
     app.include_router(router)
+
+    @app.middleware("http")
+    async def require_user_for_sensitive_routes(request: Request, call_next):
+        path = request.url.path
+        is_v2_api = path.startswith("/api/v2/") and path not in {
+            "/api/v2/auth/login",
+            "/api/v2/auth/register",
+            "/api/v2/auth/google",
+            "/api/v2/auth/me",
+            "/api/v2/auth/logout",
+        }
+        is_sensitive_route = (
+            is_v2_api
+            or path.startswith(("/api/investigations", "/api/stream/"))
+            or path.startswith(("/hub/api/", "/reports/"))
+            or path in {"/intelbase/lookup", "/intelbase/lookup/stream"}
+        )
+        if settings.require_auth and is_sensitive_route:
+            if not get_current_user_optional(request):
+                return JSONResponse(
+                    status_code=401,
+                    content={"detail": "Authentication required"},
+                )
+        return await call_next(request)
 
     try:
         from osint_hub.web import create_app as create_hub_app

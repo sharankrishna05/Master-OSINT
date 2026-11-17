@@ -4,15 +4,37 @@ services:
     env: docker
     plan: starter
     healthCheckPath: /health
+    disk:
+      name: nexus-osint-data
+      mountPath: /app/data
+      sizeGB: 1
     envVars:
       - key: ARSENAL_HOST
         value: 0.0.0.0
       - key: ARSENAL_DATA_DIR
         value: /app/data
+      - key: ARSENAL_DB
+        value: /app/data/arsenal.db
+      - key: ARSENAL_VAULT_DB
+        value: /app/data/vault.db
+      - key: ARSENAL_REPORTS_DIR
+        value: /app/data/reports
       - key: ARSENAL_JWT_SECRET
         generateValue: true
       - key: ARSENAL_DEFAULT_KEYS
         sync: false
+      - key: ARSENAL_ADMIN_EMAIL
+        sync: false
+      - key: ARSENAL_ADMIN_PASSWORD
+        sync: false
+      - key: ARSENAL_REQUIRE_AUTH
+        value: "1"
+      - key: ARSENAL_ALLOW_REGISTRATION
+        value: "0"
+      - key: ARSENAL_ALLOW_GOOGLE_AUTH
+        value: "0"
+      - key: ARSENAL_COOKIE_SECURE
+        value: "1"
       - key: HIBP_API_KEY
         sync: false
       - key: GEMINI_API_KEY

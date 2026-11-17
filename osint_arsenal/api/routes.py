@@ -2131,7 +2131,7 @@ async def auth_login(req: LoginRequest, request: Request, response: Response):
         max_age=14 * 86400,
         httponly=False,
         samesite="lax",
-        secure=False
+        secure=os.getenv("ARSENAL_COOKIE_SECURE", "0") == "1"
     )
     return {
         "status": "SUCCESS",
@@ -2142,6 +2142,8 @@ async def auth_login(req: LoginRequest, request: Request, response: Response):
 
 @router.post("/api/v2/auth/register")
 async def auth_register(req: RegisterRequest, request: Request):
+    if os.getenv("ARSENAL_ALLOW_REGISTRATION", "1") != "1":
+        raise HTTPException(status_code=403, detail="Registration is disabled")
     if not req.email or "@" not in req.email:
         raise HTTPException(status_code=400, detail="Valid email required")
     if not req.password or len(req.password) < 6:
@@ -2168,6 +2170,8 @@ async def auth_register(req: RegisterRequest, request: Request):
 
 @router.post("/api/v2/auth/google")
 async def auth_google(req: GoogleAuthRequest, request: Request, response: Response):
+    if os.getenv("ARSENAL_ALLOW_GOOGLE_AUTH", "1") != "1":
+        raise HTTPException(status_code=403, detail="Google authentication is disabled")
     ip = request.client.host if request.client else "127.0.0.1"
     ua = request.headers.get("User-Agent", "")
     
@@ -2205,7 +2209,7 @@ async def auth_google(req: GoogleAuthRequest, request: Request, response: Respon
         max_age=14 * 86400,
         httponly=False,
         samesite="lax",
-        secure=False
+        secure=os.getenv("ARSENAL_COOKIE_SECURE", "0") == "1"
     )
     return {
         "status": "SUCCESS",
@@ -2349,4 +2353,3 @@ async def api_intelbase_stream(email: str = Query(..., description="Target email
             "X-Accel-Buffering": "no"
         }
     )
-

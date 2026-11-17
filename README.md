@@ -34,7 +34,17 @@ docker compose up -d --build
 
 The service exposes port `8080` and includes a built-in `/health` liveness probe and persistent named volumes for SQLite databases (`/app/data`) and generated reports (`/app/reports`).
 
-### 2. Cloud PaaS (Render, Railway, Fly.io, Heroku)
+### 2. Render
+
+The included `render.yaml` configures a single-instance Docker service with a
+persistent disk for SQLite databases and generated reports. Persistent disks
+prevent horizontal scaling and have a brief downtime during deploys. Set the required
+`ARSENAL_ADMIN_EMAIL` and `ARSENAL_ADMIN_PASSWORD` values in Render's Blueprint
+setup; do not put production credentials in the repository. Registration and
+Google sign-in are disabled for the hosted service, and investigation/report
+APIs require an authenticated account.
+
+### 3. Other Cloud PaaS (Railway, Fly.io, Heroku)
 
 The repository includes `Dockerfile`, `Procfile`, and `render.yaml`, and automatically binds to the platform-assigned `$PORT` environment variable.
 

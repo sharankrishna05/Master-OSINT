@@ -36,13 +36,14 @@ The service exposes port `8080` and includes a built-in `/health` liveness probe
 
 ### 2. Render
 
-The included `render.yaml` configures a single-instance Docker service with a
-persistent disk for SQLite databases and generated reports. Persistent disks
-prevent horizontal scaling and have a brief downtime during deploys. Set the required
+The included `render.yaml` configures a free Docker web service. Free services
+have an ephemeral filesystem and may spin down when idle, so SQLite databases,
+accounts, and generated reports can be lost on restart or redeploy. This setup
+is for demos, not persistent production use. Set the required
 `ARSENAL_ADMIN_EMAIL` and `ARSENAL_ADMIN_PASSWORD` values in Render's Blueprint
-setup; do not put production credentials in the repository. Registration and
-Google sign-in are disabled for the hosted service, and investigation/report
-APIs require an authenticated account.
+setup; do not put credentials in the repository. Registration and Google
+sign-in are disabled for the hosted service, and investigation/report APIs
+require an authenticated account.
 
 ### 3. Other Cloud PaaS (Railway, Fly.io, Heroku)
 

@@ -741,7 +741,7 @@
     <!-- PROMINENT, SPACIOUS USER-FRIENDLY SEARCH BAR -->
     <div class="relative w-full">
       <div class="absolute left-4 top-1/2 -translate-y-1/2 text-[#00f5ff] text-xl pointer-events-none">🔍</div>
-      <input id="omni-input" oninput="autoDetectOmni(this.value)" onkeydown="if(event.key==='Enter') runLiveInvestigation()" type="text" placeholder="Enter target: Domain (google.com), Phone (9876543210), Email, Username, or IP..." class="w-full bg-[#040914] border-2 border-[#12253f] hover:border-[#00f5ff]/60 focus:border-[#00f5ff] focus:shadow-[0_0_20px_rgba(0,245,255,0.25)] pl-12 pr-44 py-3.5 text-base md:text-lg text-white rounded-xl outline-none transition-all placeholder:text-gray-500 font-medium">
+      <input id="omni-input" name="osint-target" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" oninput="autoDetectOmni(this.value)" onkeydown="if(event.key==='Enter') runLiveInvestigation()" placeholder="Enter target: Domain (google.com), Phone (9876543210), Email, Username, or IP..." class="w-full bg-[#040914] border-2 border-[#12253f] hover:border-[#00f5ff]/60 focus:border-[#00f5ff] focus:shadow-[0_0_20px_rgba(0,245,255,0.25)] pl-12 pr-44 py-3.5 text-base md:text-lg text-white rounded-xl outline-none transition-all placeholder:text-gray-500 font-medium">
 
       <!-- Clear & Execute Button Inside Search Bar -->
       <div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2">
@@ -9147,10 +9147,6 @@
       const btnText = document.getElementById('user-auth-btn-text');
       if (btnText) btnText.innerText = localStorage.getItem('nexus_token') ? 'LOGOUT' : 'LOGIN';
 
-      const vEmail = document.getElementById('vault-form-email');
-      if (vEmail && !vEmail.value) {
-        vEmail.value = (currentUser.email && currentUser.email !== 'operator@workspace') ? currentUser.email : '';
-      }
     }
 
     function openAuthModal(tab = 'login') {

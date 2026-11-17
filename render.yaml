@@ -24,7 +24,7 @@ services:
       - key: ARSENAL_REQUIRE_AUTH
         value: "1"
       - key: ARSENAL_ALLOW_REGISTRATION
-        value: "0"
+        value: "1"
       - key: ARSENAL_ALLOW_GOOGLE_AUTH
         value: "0"
       - key: ARSENAL_COOKIE_SECURE

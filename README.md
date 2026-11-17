@@ -41,9 +41,10 @@ have an ephemeral filesystem and may spin down when idle, so SQLite databases,
 accounts, and generated reports can be lost on restart or redeploy. This setup
 is for demos, not persistent production use. Set the required
 `ARSENAL_ADMIN_EMAIL` and `ARSENAL_ADMIN_PASSWORD` values in Render's Blueprint
-setup; do not put credentials in the repository. Registration and Google
-sign-in are disabled for the hosted service, and investigation/report APIs
-require an authenticated account.
+setup; do not put credentials in the repository. Local account registration is
+enabled for ordinary user accounts, while Google sign-in is disabled. New
+registrations cannot grant themselves administrator privileges. Investigation
+and report APIs require an authenticated account.
 
 ### 3. Other Cloud PaaS (Railway, Fly.io, Heroku)
 

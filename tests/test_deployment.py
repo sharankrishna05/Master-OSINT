@@ -130,6 +130,30 @@ def test_login_page_hides_disabled_auth_options(monkeypatch):
     assert "ARSENAL_ADMIN_EMAIL" in response.text
 
 
+def test_registration_creates_only_user_role(monkeypatch):
+    from osint_arsenal.api import routes
+
+    monkeypatch.setenv("ARSENAL_ALLOW_REGISTRATION", "1")
+    created = {}
+    monkeypatch.setattr(routes.auth_manager, "get_user_by_email", lambda email: None)
+
+    def create_user(**kwargs):
+        created.update(kwargs)
+        return "new-user-id"
+
+    monkeypatch.setattr(routes.auth_manager, "create_user", create_user)
+    client = TestClient(create_app())
+
+    response = client.post(
+        "/api/v2/auth/register",
+        json={"email": "new@example.com", "password": "long-enough", "name": "New User"},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["user_id"] == "new-user-id"
+    assert created["role"] == "user"
+
+
 def test_authenticated_api_allowed_in_production(monkeypatch):
     from osint_arsenal import config
     import osint_arsenal.api.server as server

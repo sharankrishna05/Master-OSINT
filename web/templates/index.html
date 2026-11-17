@@ -9072,6 +9072,30 @@
       return headers;
     }
 
+    const nativeFetch = window.fetch.bind(window);
+    window.fetch = (input, init = {}) => {
+      const requestUrl = new URL(input instanceof Request ? input.url : input, window.location.href);
+      const path = requestUrl.pathname;
+      const requiresAuth = path.startsWith('/api/v2/')
+        || path.startsWith('/api/investigations')
+        || path.startsWith('/api/stream/')
+        || path.startsWith('/hub/api/')
+        || path.startsWith('/reports/')
+        || path === '/intelbase/lookup'
+        || path === '/intelbase/lookup/stream';
+      if (requestUrl.origin !== window.location.origin || !requiresAuth) {
+        return nativeFetch(input, init);
+      }
+
+      const headers = new Headers(input instanceof Request ? input.headers : undefined);
+      new Headers(init.headers || {}).forEach((value, name) => headers.set(name, value));
+      const token = localStorage.getItem('nexus_token');
+      if (token && !headers.has('Authorization')) {
+        headers.set('Authorization', `Bearer ${token}`);
+      }
+      return nativeFetch(input, { ...init, headers });
+    };
+
     async function initAuthState() {
       try {
         const token = localStorage.getItem('nexus_token');
@@ -9193,6 +9217,7 @@
         currentUser = data.user;
         updateUserUI();
         await loadVaultCredentials();
+        await loadDatabasesRegistry();
 
         if (alertBox) {
           alertBox.className = 'p-3 rounded border text-xs bg-[#39ff14]/15 border-[#39ff14] text-[#39ff14]';
@@ -11698,9 +11723,15 @@
 
 
         if (!response.ok) {
-
+          if (response.status === 401) {
+            const statusBody = document.getElementById('provider-status-table-body');
+            if (statusBody) {
+              statusBody.innerHTML = '<tr><td colspan="4" class="py-4 text-center text-[#ffd60a]">Sign in to run investigations.</td></tr>';
+            }
+            openAuthModal('login');
+            return;
+          }
           throw new Error(`Backend returned HTTP ${response.status}`);
-
         }
 
 
@@ -11714,10 +11745,11 @@
       } catch (err) {
         console.warn('Backend query issue:', err);
         document.getElementById('ov-target').innerText = `TARGET: ${target.toUpperCase()}`;
-        document.getElementById('provider-status-table-body').innerHTML = `
+        const statusBody = document.getElementById('provider-status-table-body');
+        if (statusBody) statusBody.innerHTML = `
           <tr>
             <td colspan="4" class="py-4 text-center text-[#ff003c]">
-              ERROR: Could not connect to local engine at ${API_BASE}. Verify backend is running.
+              ERROR: ${err.message || `Could not connect to ${API_BASE}.`}
             </td>
           </tr>
         `;
@@ -22766,9 +22798,16 @@ for result in data.get("results", []):
 
       try {
 
-        const resp = await fetch(`${API_BASE}/api/v2/databases/registry`);
+        const resp = await fetch(`${API_BASE}/api/v2/databases/registry`, { headers: getAuthHeaders() });
 
-        if (!resp.ok) return;
+        if (resp.status === 401) {
+          const grid = document.getElementById('databases-cards-grid');
+          if (grid) {
+            grid.innerHTML = '<div class="col-span-full p-8 text-center text-[#ffd60a] mono text-xs bg-[#091527] rounded border border-[#12253f]">Sign in to load the OSINT databases catalog.</div>';
+          }
+          return;
+        }
+        if (!resp.ok) throw new Error(`Database catalog request failed (HTTP ${resp.status})`);
 
         const data = await resp.json();
 

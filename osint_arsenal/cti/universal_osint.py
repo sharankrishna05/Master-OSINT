@@ -678,38 +678,46 @@ class UniversalOsintSuite:
         # Clean slug for repo/handle searches
         slug = clean.split(".")[0] if "." in clean else clean
 
+        def make_dork(category: str, purpose: str, query: str, search_url: str) -> Dict[str, str]:
+            return {
+                "category": category,
+                "purpose": purpose,
+                "query": query,
+                "url": f"{search_url}{urllib.parse.quote(query)}",
+            }
+
         return {
             "target": clean,
             "google_dorks": [
-                {"category": "Exposed Credentials & Configs", "purpose": "Sensitive .env, config, and credential files", "query": f'site:{clean} (ext:env OR ext:yml OR ext:yaml OR ext:conf OR ext:cfg) "password"', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} (ext:env OR ext:yml OR ext:yaml OR ext:conf OR ext:cfg) password")}'},
-                {"category": "Directory Indexing", "purpose": "Open server directories revealing internal trees", "query": f'site:{clean} intitle:"Index of /" OR intitle:"parent directory"', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} intitle:\"Index of /\" OR intitle:\"parent directory\"")}'},
-                {"category": "Database Backups & Dumps", "purpose": "Exposed SQL dumps, raw schemas, and tables", "query": f'site:{clean} ext:sql OR ext:dump OR ext:bak OR ext:tar OR ext:zip', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} ext:sql OR ext:dump OR ext:bak OR ext:tar OR ext:zip")}'},
-                {"category": "Administrative Entrypoints", "purpose": "Sign-in portals, SSO panels, and admin portals", "query": f'site:{clean} inurl:admin OR inurl:login OR inurl:portal OR inurl:cpanel', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} inurl:admin OR inurl:login OR inurl:portal OR inurl:cpanel")}'},
-                {"category": "Confidential Leaks", "purpose": "Documents marked confidential, internal, or classified", "query": f'site:{clean} (ext:pdf OR ext:docx OR ext:xlsx) "confidential" OR "internal use only"', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:{clean} (ext:pdf OR ext:docx OR ext:xlsx) \"confidential\" OR \"internal use only\"")}'},
-                {"category": "Subdomain Discovery", "purpose": "Hidden subdomains indexed by search engines", "query": f'site:*.{clean} -www.{clean}', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"site:*.{clean} -www.{clean}")}'}
+                make_dork("Exposed Credentials & Configs", "Sensitive .env, config, and credential files", f'site:{clean} (ext:env OR ext:yml OR ext:yaml OR ext:conf OR ext:cfg) "password"', "https://www.google.com/search?q="),
+                make_dork("Directory Indexing", "Open server directories revealing internal trees", f'site:{clean} intitle:"Index of /" OR intitle:"parent directory"', "https://www.google.com/search?q="),
+                make_dork("Database Backups & Dumps", "Exposed SQL dumps, raw schemas, and tables", f"site:{clean} ext:sql OR ext:dump OR ext:bak OR ext:tar OR ext:zip", "https://www.google.com/search?q="),
+                make_dork("Administrative Entrypoints", "Sign-in portals, SSO panels, and admin portals", f"site:{clean} inurl:admin OR inurl:login OR inurl:portal OR inurl:cpanel", "https://www.google.com/search?q="),
+                make_dork("Confidential Leaks", "Documents marked confidential, internal, or classified", f'site:{clean} (ext:pdf OR ext:docx OR ext:xlsx) "confidential" OR "internal use only"', "https://www.google.com/search?q="),
+                make_dork("Subdomain Discovery", "Hidden subdomains indexed by search engines", f"site:*.{clean} -www.{clean}", "https://www.google.com/search?q="),
             ],
             "shodan_dorks": [
-                {"category": "Hostname Exposure", "purpose": "Discovered services matching target host banner", "query": f'hostname:"{clean}"', "url": f'https://www.shodan.io/search?query={urllib.parse.quote(f"hostname:\"{clean}\"")}'},
-                {"category": "SSL Certificate Subject", "purpose": "Find IPs presenting SSL certificates issued to target", "query": f'ssl.cert.subject.cn:"{clean}"', "url": f'https://www.shodan.io/search?query={urllib.parse.quote(f"ssl.cert.subject.cn:\"{clean}\"")}'},
-                {"category": "Open Management Consoles", "purpose": "Exposed RDP, SSH, and admin web servers", "query": f'org:"{slug}" (port:3389 OR port:22 OR port:8443)', "url": f'https://www.shodan.io/search?query={urllib.parse.quote(f"org:\"{slug}\" (port:3389 OR port:22 OR port:8443)")}'},
-                {"category": "Vulnerability Tracking", "purpose": "Identified CVE vulnerabilities mapped to this entity", "query": f'hostname:"{clean}" has_vuln:true', "url": f'https://www.shodan.io/search?query={urllib.parse.quote(f"hostname:\"{clean}\" has_vuln:true")}'}
+                make_dork("Hostname Exposure", "Discovered services matching target host banner", f'hostname:"{clean}"', "https://www.shodan.io/search?query="),
+                make_dork("SSL Certificate Subject", "Find IPs presenting SSL certificates issued to target", f'ssl.cert.subject.cn:"{clean}"', "https://www.shodan.io/search?query="),
+                make_dork("Open Management Consoles", "Exposed RDP, SSH, and admin web servers", f'org:"{slug}" (port:3389 OR port:22 OR port:8443)', "https://www.shodan.io/search?query="),
+                make_dork("Vulnerability Tracking", "Identified CVE vulnerabilities mapped to this entity", f'hostname:"{clean}" has_vuln:true', "https://www.shodan.io/search?query="),
             ],
             "github_dorks": [
-                {"category": "API Keys & Tokens", "purpose": "Leaked Google, AWS, GitHub, or Stripe keys", "query": f'"{clean}" "AIzaSy" OR "ghp_" OR "xoxb-" OR "AKIA"', "url": f'https://github.com/search?type=code&q={urllib.parse.quote(f"\"{clean}\" \"AIzaSy\" OR \"ghp_\" OR \"AKIA\"")}'},
-                {"category": "Database URIs", "purpose": "Exposed MongoDB, PostgreSQL, and MySQL connection strings", "query": f'"{clean}" "mongodb://" OR "postgres://" OR "mysql://"', "url": f'https://github.com/search?type=code&q={urllib.parse.quote(f"\"{clean}\" \"mongodb://\" OR \"postgres://\"")}'},
-                {"category": "Private SSH / RSA Keys", "purpose": "Accidentally committed private key pairs", "query": f'"{clean}" "-----BEGIN RSA PRIVATE KEY-----"', "url": f'https://github.com/search?type=code&q={urllib.parse.quote(f"\"{clean}\" \"BEGIN RSA PRIVATE KEY\"")}'},
-                {"category": "Environment Files", "purpose": "Exposed .env and docker-compose secrets", "query": f'filename:.env "{clean}"', "url": f'https://github.com/search?type=code&q={urllib.parse.quote(f"filename:.env \"{clean}\"")}'}
+                make_dork("API Keys & Tokens", "Leaked Google, AWS, GitHub, or Stripe keys", f'"{clean}" "AIzaSy" OR "ghp_" OR "xoxb-" OR "AKIA"', "https://github.com/search?type=code&q="),
+                make_dork("Database URIs", "Exposed MongoDB, PostgreSQL, and MySQL connection strings", f'"{clean}" "mongodb://" OR "postgres://" OR "mysql://"', "https://github.com/search?type=code&q="),
+                make_dork("Private SSH / RSA Keys", "Accidentally committed private key pairs", f'"{clean}" "-----BEGIN RSA PRIVATE KEY-----"', "https://github.com/search?type=code&q="),
+                make_dork("Environment Files", "Exposed .env and docker-compose secrets", f'filename:.env "{clean}"', "https://github.com/search?type=code&q="),
             ],
             "censys_dorks": [
-                {"category": "Host Inventory", "purpose": "Censys search for live endpoints with target domain", "query": f'services.tls.certificates.leaf_data.names: {clean}', "url": f'https://search.censys.io/search?resource=hosts&q={urllib.parse.quote(f"services.tls.certificates.leaf_data.names: {clean}")}'},
-                {"category": "Web Entity Mapping", "purpose": "Discovered services running HTTP services with target name", "query": f'services.http.response.headers.location: {clean}', "url": f'https://search.censys.io/search?resource=hosts&q={urllib.parse.quote(f"services.http.response.headers.location: {clean}")}'}
+                make_dork("Host Inventory", "Censys search for live endpoints with target domain", f"services.tls.certificates.leaf_data.names: {clean}", "https://search.censys.io/search?resource=hosts&q="),
+                make_dork("Web Entity Mapping", "Discovered services running HTTP services with target name", f"services.http.response.headers.location: {clean}", "https://search.censys.io/search?resource=hosts&q="),
             ],
             "wayback_dorks": [
                 {"category": "Historical Endpoint Crawl", "purpose": "Wayback Machine index for all historical URLs", "query": f'*.{clean}/*', "url": f'https://web.archive.org/cdx/search/cdx?url=*.{clean}/*&output=json&collapse=urlkey&limit=50'},
                 {"category": "Historical Snapshots View", "purpose": "Browse historical versions of the target domain", "query": f'{clean}', "url": f'https://web.archive.org/web/*/{clean}'}
             ],
             "darkweb_dorks": [
-                {"category": "Pastebin Leaks", "purpose": "Plaintext credential dumps and paste dumps", "query": f'"{clean}" (password OR leak OR dump) site:pastebin.com', "url": f'https://www.google.com/search?q={urllib.parse.quote(f"\"{clean}\" (password OR leak OR dump) site:pastebin.com")}'},
+                make_dork("Pastebin Leaks", "Plaintext credential dumps and paste dumps", f'"{clean}" (password OR leak OR dump) site:pastebin.com', "https://www.google.com/search?q="),
                 {"category": "Underground Breach Mentions", "purpose": "DeHashed / BreachDirectory search query", "query": f'domain:{clean}', "url": f'https://dehashed.com/search?query=domain:{clean}'}
             ],
             "exploit_dorks": [

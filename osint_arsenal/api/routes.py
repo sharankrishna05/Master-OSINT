@@ -11,6 +11,7 @@ import uuid
 import datetime
 import random
 import os
+import httpx
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
@@ -109,7 +110,7 @@ async def index(request: Request):
         "request": request,
         "recent": recent,
         "auth_allow_registration": os.getenv("ARSENAL_ALLOW_REGISTRATION", "1") == "1",
-        "auth_allow_google": os.getenv("ARSENAL_ALLOW_GOOGLE_AUTH", "1") == "1",
+        "auth_allow_google": os.getenv("ARSENAL_ALLOW_GOOGLE_AUTH", "0") == "1",
         "stats": {
             "tools": len(ds.tools),
             "categories": len(ds.categories),
@@ -123,9 +124,8 @@ async def index(request: Request):
 
 @router.get("/nexus", response_class=HTMLResponse)
 @router.get("/platform", response_class=HTMLResponse)
-async def nexus_platform():
-    path = ROOT / "web" / "templates" / "index.html"
-    return FileResponse(str(path))
+async def nexus_platform(request: Request):
+    return await index(request)
 
 
 
@@ -2119,6 +2119,117 @@ def require_admin(request: Request) -> Dict[str, Any]:
         raise HTTPException(status_code=403, detail="Administrator privileges required")
     return user
 
+
+@router.get("/admin", response_class=HTMLResponse)
+async def admin_dashboard(request: Request):
+    user = get_current_user_optional(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Authentication required")
+    if user.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="Administrator privileges required")
+    return templates.TemplateResponse("admin.html", {"request": request})
+
+
+@router.get("/api/v2/admin/stats")
+async def admin_stats(admin: Dict[str, Any] = Depends(require_admin)):
+    return auth_manager.get_security_stats()
+
+
+@router.get("/api/v2/admin/users")
+async def admin_users(
+    search: str = Query("", max_length=100),
+    admin: Dict[str, Any] = Depends(require_admin),
+):
+    return {"users": auth_manager.list_users(search=search)}
+
+
+@router.patch("/api/v2/admin/users/{user_id}/role")
+async def admin_update_user_role(
+    user_id: str,
+    req: UserRoleRequest,
+    admin: Dict[str, Any] = Depends(require_admin),
+):
+    if req.role not in {"admin", "user"}:
+        raise HTTPException(status_code=400, detail="Role must be admin or user")
+    if user_id == admin["id"] and req.role != "admin":
+        raise HTTPException(status_code=409, detail="You cannot remove your own administrator role")
+    if not auth_manager.get_user_by_id(user_id):
+        raise HTTPException(status_code=404, detail="User not found")
+    if not auth_manager.set_user_role(user_id, req.role, admin_email=admin["email"]):
+        raise HTTPException(status_code=409, detail="Cannot remove the last active, verified administrator")
+    return {"status": "SUCCESS"}
+
+
+@router.patch("/api/v2/admin/users/{user_id}/verification")
+async def admin_update_user_verification(
+    user_id: str,
+    req: UserVerifyRequest,
+    admin: Dict[str, Any] = Depends(require_admin),
+):
+    if user_id == admin["id"] and not req.is_verified:
+        raise HTTPException(status_code=409, detail="You cannot remove your own verification")
+    if not auth_manager.get_user_by_id(user_id):
+        raise HTTPException(status_code=404, detail="User not found")
+    if not auth_manager.set_user_verified(user_id, req.is_verified, admin_email=admin["email"]):
+        raise HTTPException(status_code=409, detail="Cannot remove verification from the last active, verified administrator")
+    return {"status": "SUCCESS"}
+
+
+@router.patch("/api/v2/admin/users/{user_id}/status")
+async def admin_update_user_status(
+    user_id: str,
+    req: UserStatusRequest,
+    admin: Dict[str, Any] = Depends(require_admin),
+):
+    if user_id == admin["id"] and not req.is_active:
+        raise HTTPException(status_code=409, detail="You cannot deactivate your own account")
+    if not auth_manager.get_user_by_id(user_id):
+        raise HTTPException(status_code=404, detail="User not found")
+    if not auth_manager.toggle_user_active(user_id, req.is_active, admin_email=admin["email"]):
+        raise HTTPException(status_code=409, detail="Cannot deactivate the last active, verified administrator")
+    return {"status": "SUCCESS"}
+
+
+@router.get("/api/v2/admin/activity")
+async def admin_activity(
+    limit: int = Query(100, ge=1, le=200),
+    user_email: Optional[str] = Query(None, max_length=255),
+    action: Optional[str] = Query(None, max_length=80),
+    admin: Dict[str, Any] = Depends(require_admin),
+):
+    return {
+        "activity": auth_manager.list_activity_logs(
+            limit=limit,
+            user_email=user_email,
+            action=action,
+        )
+    }
+
+
+@router.get("/api/v2/admin/vault-inventory")
+async def admin_vault_inventory(admin: Dict[str, Any] = Depends(require_admin)):
+    inventory = auth_manager.list_all_vault_inventory()
+    safe_inventory = [
+        {
+            key: item[key]
+            for key in (
+                "id",
+                "user_id",
+                "user_email",
+                "user_name",
+                "service",
+                "account_email",
+                "masked_secret",
+                "updated_at",
+                "created_at",
+            )
+            if key in item
+        }
+        for item in inventory
+    ]
+    return {"inventory": safe_inventory}
+
+
 @router.post("/api/v2/auth/login")
 async def auth_login(req: LoginRequest, request: Request, response: Response):
     ip = request.client.host if request.client else "127.0.0.1"
@@ -2172,27 +2283,50 @@ async def auth_register(req: RegisterRequest, request: Request):
 
 @router.post("/api/v2/auth/google")
 async def auth_google(req: GoogleAuthRequest, request: Request, response: Response):
-    if os.getenv("ARSENAL_ALLOW_GOOGLE_AUTH", "1") != "1":
+    if os.getenv("ARSENAL_ALLOW_GOOGLE_AUTH", "0") != "1":
         raise HTTPException(status_code=403, detail="Google authentication is disabled")
+    client_id = os.getenv("ARSENAL_GOOGLE_CLIENT_ID", "").strip()
+    if not client_id:
+        raise HTTPException(status_code=503, detail="Google authentication is not configured")
+    if not req.credential_token:
+        raise HTTPException(status_code=401, detail="A verified Google sign-in credential is required")
+    try:
+        async with httpx.AsyncClient(timeout=8.0) as client:
+            google_response = await client.get(
+                "https://oauth2.googleapis.com/tokeninfo",
+                params={"id_token": req.credential_token},
+            )
+    except httpx.TimeoutException as exc:
+        raise HTTPException(status_code=503, detail="Google authentication verification timed out") from exc
+    except httpx.RequestError as exc:
+        raise HTTPException(status_code=503, detail="Google authentication verification is unavailable") from exc
+    if google_response.status_code != 200:
+        raise HTTPException(status_code=401, detail="Invalid Google sign-in credential")
+    try:
+        claims = google_response.json()
+        if not isinstance(claims, dict):
+            raise ValueError("Google token response must be an object")
+        token_expiry = float(claims.get("exp", 0))
+    except (ValueError, TypeError):
+        raise HTTPException(status_code=401, detail="Invalid Google sign-in credential")
+    if (
+        claims.get("aud") != client_id
+        or claims.get("iss") not in {"accounts.google.com", "https://accounts.google.com"}
+        or claims.get("email_verified") not in (True, "true")
+        or token_expiry <= datetime.datetime.now(datetime.timezone.utc).timestamp()
+    ):
+        raise HTTPException(status_code=401, detail="Google sign-in credential is not valid for this application")
     ip = request.client.host if request.client else "127.0.0.1"
     ua = request.headers.get("User-Agent", "")
     
-    email = req.email.strip().lower()
-    name = req.name or email.split("@")[0].title()
-    avatar = req.avatar_url or ""
-    
-    if req.credential_token and not email:
-        try:
-            import jwt as pyjwt
-            decoded = pyjwt.decode(req.credential_token, options={"verify_signature": False})
-            email = decoded.get("email", "").lower()
-            name = decoded.get("name", name)
-            avatar = decoded.get("picture", avatar)
-        except Exception:
-            pass
+    email = str(claims.get("email", "")).strip().lower()
+    name = str(claims.get("name", "")).strip() or email.split("@")[0].title()
+    avatar = str(claims.get("picture", "")).strip()
 
     if not email or "@" not in email:
         raise HTTPException(status_code=400, detail="Invalid Google authentication credential")
+    if req.email and req.email.strip().lower() != email:
+        raise HTTPException(status_code=401, detail="Google sign-in email does not match the verified credential")
 
     ok, auth_data, msg = auth_manager.authenticate_google(
         email=email,

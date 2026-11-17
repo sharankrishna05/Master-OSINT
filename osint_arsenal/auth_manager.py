@@ -166,7 +166,7 @@ class AuthManager:
         try:
             payload = jwt.decode(token, JWT_SECRET_KEY, algorithms=[JWT_ALGORITHM])
             user = self.get_user_by_id(payload["sub"])
-            if user and user.get("is_active"):
+            if user and user.get("is_active") and user.get("is_verified"):
                 return user
             return None
         except Exception:
@@ -176,15 +176,29 @@ class AuthManager:
         """Optionally seeds an initial admin account from environment variables."""
         admin_email = os.getenv("ARSENAL_ADMIN_EMAIL", "").strip().lower()
         admin_password = os.getenv("ARSENAL_ADMIN_PASSWORD", "").strip()
-        if admin_email and admin_password and not self.get_user_by_email(admin_email):
-            self.create_user(
-                email=admin_email,
-                password=admin_password,
-                name=os.getenv("ARSENAL_ADMIN_NAME", "Platform Administrator"),
-                role="admin",
-                is_verified=True,
-                auth_provider="local",
-            )
+        if admin_email and admin_password:
+            admin = self.get_user_by_email(admin_email)
+            if admin:
+                conn = self._get_connection()
+                with conn:
+                    conn.execute(
+                        """
+                        UPDATE users
+                        SET password_hash = ?, role = 'admin', is_verified = 1, is_active = 1
+                        WHERE id = ?
+                        """,
+                        (self._hash_password(admin_password), admin["id"]),
+                    )
+                conn.close()
+            else:
+                self.create_user(
+                    email=admin_email,
+                    password=admin_password,
+                    name=os.getenv("ARSENAL_ADMIN_NAME", "Platform Administrator"),
+                    role="admin",
+                    is_verified=True,
+                    auth_provider="local",
+                )
 
         # Optional local demo mode only when explicitly enabled
         if os.getenv("ARSENAL_SEED_DEMO", "0") == "1":
@@ -308,12 +322,11 @@ class AuthManager:
                 user["avatar_url"] = avatar_url
         else:
             # First-time Google user registration (auto-verified by Google OAuth)
-            role = "admin" if email_clean in ["sharan.vaka@gmail.com", "admin@nostromo.sec"] else "user"
             u_id = self.create_user(
                 email=email_clean,
                 password=None,
                 name=name or email_clean.split("@")[0].title(),
-                role=role,
+                role="user",
                 is_verified=True,
                 auth_provider="google",
                 avatar_url=avatar_url,
@@ -368,9 +381,33 @@ class AuthManager:
 
     def set_user_verified(self, user_id: str, is_verified: bool, admin_email: str = "") -> bool:
         conn = self._get_connection()
+        updated = False
         with conn:
-            conn.execute("UPDATE users SET is_verified = ? WHERE id = ?", (1 if is_verified else 0, user_id))
+            conn.execute("BEGIN IMMEDIATE")
+            user = conn.execute(
+                "SELECT role, is_active, is_verified FROM users WHERE id = ?",
+                (user_id,),
+            ).fetchone()
+            can_update = user is not None
+            if (
+                can_update
+                and not is_verified
+                and user["role"] == "admin"
+                and user["is_active"]
+                and user["is_verified"]
+            ):
+                verified_admins = conn.execute(
+                    "SELECT COUNT(*) FROM users WHERE role = 'admin' AND is_active = 1 AND is_verified = 1"
+                ).fetchone()[0]
+                can_update = verified_admins > 1
+            if can_update:
+                updated = conn.execute(
+                    "UPDATE users SET is_verified = ? WHERE id = ?",
+                    (1 if is_verified else 0, user_id),
+                ).rowcount == 1
         conn.close()
+        if not updated:
+            return False
         u = self.get_user_by_id(user_id)
         if u:
             self.log_activity(
@@ -387,9 +424,33 @@ class AuthManager:
         if role not in ["admin", "user"]:
             return False
         conn = self._get_connection()
+        updated = False
         with conn:
-            conn.execute("UPDATE users SET role = ? WHERE id = ?", (role, user_id))
+            conn.execute("BEGIN IMMEDIATE")
+            user = conn.execute(
+                "SELECT role, is_active, is_verified FROM users WHERE id = ?",
+                (user_id,),
+            ).fetchone()
+            can_update = user is not None
+            if (
+                can_update
+                and role != "admin"
+                and user["role"] == "admin"
+                and user["is_active"]
+                and user["is_verified"]
+            ):
+                verified_admins = conn.execute(
+                    "SELECT COUNT(*) FROM users WHERE role = 'admin' AND is_active = 1 AND is_verified = 1"
+                ).fetchone()[0]
+                can_update = verified_admins > 1
+            if can_update:
+                updated = conn.execute(
+                    "UPDATE users SET role = ? WHERE id = ?",
+                    (role, user_id),
+                ).rowcount == 1
         conn.close()
+        if not updated:
+            return False
         u = self.get_user_by_id(user_id)
         if u:
             self.log_activity(
@@ -404,9 +465,33 @@ class AuthManager:
 
     def toggle_user_active(self, user_id: str, is_active: bool, admin_email: str = "") -> bool:
         conn = self._get_connection()
+        updated = False
         with conn:
-            conn.execute("UPDATE users SET is_active = ? WHERE id = ?", (1 if is_active else 0, user_id))
+            conn.execute("BEGIN IMMEDIATE")
+            user = conn.execute(
+                "SELECT role, is_active, is_verified FROM users WHERE id = ?",
+                (user_id,),
+            ).fetchone()
+            can_update = user is not None
+            if (
+                can_update
+                and not is_active
+                and user["role"] == "admin"
+                and user["is_active"]
+                and user["is_verified"]
+            ):
+                verified_admins = conn.execute(
+                    "SELECT COUNT(*) FROM users WHERE role = 'admin' AND is_active = 1 AND is_verified = 1"
+                ).fetchone()[0]
+                can_update = verified_admins > 1
+            if can_update:
+                updated = conn.execute(
+                    "UPDATE users SET is_active = ? WHERE id = ?",
+                    (1 if is_active else 0, user_id),
+                ).rowcount == 1
         conn.close()
+        if not updated:
+            return False
         u = self.get_user_by_id(user_id)
         if u:
             self.log_activity(

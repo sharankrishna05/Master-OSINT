@@ -46,6 +46,13 @@ enabled for ordinary user accounts, while Google sign-in is disabled. New
 registrations cannot grant themselves administrator privileges. Investigation
 and report APIs require an authenticated account.
 
+After signing in with the configured administrator account, open `/admin` or
+use the **ADMIN** button in the application header. The dashboard's user,
+activity, and vault-inventory APIs all require the administrator role; vault
+secret values are never returned by the admin inventory endpoint. Keep
+`ARSENAL_ADMIN_EMAIL` and `ARSENAL_ADMIN_PASSWORD` private and configure them
+directly in Render.
+
 ### 3. Other Cloud PaaS (Railway, Fly.io, Heroku)
 
 The repository includes `Dockerfile`, `Procfile`, and `render.yaml`, and automatically binds to the platform-assigned `$PORT` environment variable.

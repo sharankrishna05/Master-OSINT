@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEXUS OSINT | Admin</title>
+  <style>
+    :root { color-scheme: dark; font-family: Segoe UI, sans-serif; background: #02060b; color: #e2e8f0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 2rem; background: #050c18; border-bottom: 1px solid #1a2d4b; }
+    h1, h2, p { margin: 0; }
+    h1 { font-size: 1.15rem; color: #00f5ff; letter-spacing: .08em; }
+    h2 { font-size: 1rem; color: #00f5ff; margin-bottom: 1rem; }
+    main { max-width: 1440px; margin: auto; padding: 1.5rem; }
+    .toolbar, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+    .toolbar { justify-content: space-between; margin-bottom: 1rem; }
+    button, a.button { border: 1px solid #24506a; color: #b7f8ff; background: #091527; border-radius: .45rem; padding: .55rem .8rem; cursor: pointer; text-decoration: none; font-weight: 600; }
+    button:hover, a.button:hover { border-color: #00f5ff; background: #10233a; }
+    button.danger { color: #ff8296; border-color: #713044; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    input { color: #e2e8f0; background: #030712; border: 1px solid #24506a; border-radius: .4rem; padding: .6rem .75rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .8rem; margin-bottom: 1rem; }
+    .card, section { background: #050c18; border: 1px solid #1a2d4b; border-radius: .65rem; }
+    .card { padding: 1rem; }
+    .card span { display: block; color: #91a8c4; font-size: .75rem; text-transform: uppercase; }
+    .card strong { display: block; margin-top: .5rem; color: #39ffb1; font-size: 1.5rem; }
+    section { padding: 1rem; margin-top: 1rem; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 720px; font-size: .82rem; }
+    th, td { padding: .65rem .55rem; text-align: left; border-bottom: 1px solid #16253b; vertical-align: top; }
+    th { color: #91a8c4; font-size: .72rem; text-transform: uppercase; }
+    .muted { color: #91a8c4; }
+    #admin-message { min-height: 1.3rem; color: #ff8296; margin-bottom: .5rem; }
+    @media (max-width: 640px) { header { padding: 1rem; } main { padding: .8rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>NEXUS OSINT / ADMINISTRATION</h1>
+      <p class="muted">Restricted account, audit, and vault inventory controls</p>
+    </div>
+    <nav class="toolbar">
+      <a class="button" href="/">Back to OSINT</a>
+      <button id="admin-logout" type="button">Sign out</button>
+    </nav>
+  </header>
+  <main>
+    <div class="toolbar">
+      <div id="admin-message" role="status" aria-live="polite"></div>
+      <button id="admin-refresh" type="button">Refresh dashboard</button>
+    </div>
+    <div class="cards" id="admin-stats"></div>
+
+    <section>
+      <div class="toolbar">
+        <h2>User accounts</h2>
+        <form id="user-search-form" class="actions">
+          <input id="user-search" type="search" maxlength="100" placeholder="Filter by name or email" autocomplete="off">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>User</th><th>Role</th><th>Verification</th><th>Status</th><th>Created</th><th>Actions</th></tr></thead>
+          <tbody id="admin-users"><tr><td colspan="6" class="muted">Loading users...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="toolbar"><h2>Recent activity</h2><span class="muted">Latest 100 events</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Time</th><th>User</th><th>Action</th><th>Target</th><th>Status</th><th>IP</th></tr></thead>
+          <tbody id="admin-activity"><tr><td colspan="6" class="muted">Loading activity...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="toolbar"><h2>Vault inventory</h2><span class="muted">Secret values are never returned; keys are masked.</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>User</th><th>Service</th><th>Account</th><th>Masked key</th><th>Updated</th></tr></thead>
+          <tbody id="admin-vault"><tr><td colspan="5" class="muted">Loading vault inventory...</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const adminToken = localStorage.getItem('nexus_token');
+    const adminMessage = document.getElementById('admin-message');
+    const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[char]));
+
+    async function adminApi(path, options = {}) {
+      const headers = new Headers(options.headers || {});
+      headers.set('Content-Type', 'application/json');
+      if (adminToken) headers.set('Authorization', `Bearer ${adminToken}`);
+      const response = await fetch(path, {
+        ...options,
+        headers,
+        credentials: 'same-origin'
+      });
+      if (response.status === 401) {
+        localStorage.removeItem('nexus_token');
+        window.location.assign('/');
+        throw new Error('Your session expired. Please sign in again.');
+      }
+      let payload;
+      try {
+        payload = await response.json();
+      } catch {
+        throw new Error('The server returned an invalid response.');
+      }
+      if (!response.ok) throw new Error(payload.detail || `Request failed (${response.status})`);
+      return payload;
+    }
+
+    function renderStats(stats) {
+      const items = [
+        ['Users', stats.total_users],
+        ['Verified', stats.verified_users],
+        ['Unverified', stats.unverified_users],
+        ['Vault entries', stats.total_vault_keys],
+        ['Activity events', stats.total_actions],
+        ['Investigations', stats.total_searches]
+      ];
+      document.getElementById('admin-stats').innerHTML = items.map(([label, value]) =>
+        `<div class="card"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`
+      ).join('');
+    }
+
+    function renderUsers(users) {
+      const body = document.getElementById('admin-users');
+      if (!users.length) {
+        body.innerHTML = '<tr><td colspan="6" class="muted">No matching users.</td></tr>';
+        return;
+      }
+      body.innerHTML = users.map((user) => {
+        const self = user.id === (window.adminUserId || '');
+        const role = user.role === 'admin' ? 'admin' : 'user';
+        return `<tr>
+          <td><strong>${escapeHtml(user.name)}</strong><br><span class="muted">${escapeHtml(user.email)}</span></td>
+          <td>${escapeHtml(role)}</td>
+          <td>${user.is_verified ? 'Verified' : 'Pending'}</td>
+          <td>${user.is_active ? 'Active' : 'Disabled'}</td>
+          <td>${escapeHtml(user.created_at)}</td>
+          <td><div class="actions">
+            <button data-action="role" data-id="${escapeHtml(user.id)}" data-value="${role === 'admin' ? 'user' : 'admin'}" ${self ? 'disabled title="You cannot remove your own admin role"' : ''}>${role === 'admin' ? 'Make user' : 'Make admin'}</button>
+            <button data-action="verification" data-id="${escapeHtml(user.id)}" data-value="${user.is_verified ? 'false' : 'true'}" ${self && user.is_verified ? 'disabled title="You cannot remove your own verification"' : ''}>${user.is_verified ? 'Unverify' : 'Verify'}</button>
+            <button class="danger" data-action="status" data-id="${escapeHtml(user.id)}" data-value="${user.is_active ? 'false' : 'true'}" ${self ? 'disabled title="You cannot deactivate your own account"' : ''}>${user.is_active ? 'Disable' : 'Enable'}</button>
+          </div></td>
+        </tr>`;
+      }).join('');
+    }
+
+    function renderActivity(entries) {
+      const body = document.getElementById('admin-activity');
+      body.innerHTML = entries.length ? entries.map((entry) => `<tr>
+        <td>${escapeHtml(entry.timestamp)}</td><td>${escapeHtml(entry.user_email)}</td>
+        <td>${escapeHtml(entry.action)}</td><td>${escapeHtml(entry.target)}</td>
+        <td>${escapeHtml(entry.status)}</td><td>${escapeHtml(entry.ip_address)}</td>
+      </tr>`).join('') : '<tr><td colspan="6" class="muted">No activity recorded.</td></tr>';
+    }
+
+    function renderVault(entries) {
+      const body = document.getElementById('admin-vault');
+      body.innerHTML = entries.length ? entries.map((entry) => `<tr>
+        <td>${escapeHtml(entry.user_name)}<br><span class="muted">${escapeHtml(entry.user_email)}</span></td>
+        <td>${escapeHtml(entry.service)}</td><td>${escapeHtml(entry.account_email)}</td>
+        <td>${escapeHtml(entry.masked_secret)}</td><td>${escapeHtml(entry.updated_at)}</td>
+      </tr>`).join('') : '<tr><td colspan="5" class="muted">No vault entries.</td></tr>';
+    }
+
+    async function loadAdminData() {
+      adminMessage.textContent = '';
+      try {
+        const search = document.getElementById('user-search').value.trim();
+        const [stats, users, activity, vault, me] = await Promise.all([
+          adminApi('/api/v2/admin/stats'),
+          adminApi(`/api/v2/admin/users?search=${encodeURIComponent(search)}`),
+          adminApi('/api/v2/admin/activity?limit=100'),
+          adminApi('/api/v2/admin/vault-inventory'),
+          adminApi('/api/v2/auth/me')
+        ]);
+        if (!me.authenticated || me.user.role !== 'admin') {
+          window.location.assign('/');
+          return;
+        }
+        window.adminUserId = me.user.id;
+        renderStats(stats);
+        renderUsers(users.users);
+        renderActivity(activity.activity);
+        renderVault(vault.inventory);
+      } catch (error) {
+        adminMessage.textContent = error.message || 'Unable to load administrator data.';
+      }
+    }
+
+    document.getElementById('admin-refresh').addEventListener('click', loadAdminData);
+    document.getElementById('user-search-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      loadAdminData();
+    });
+    document.getElementById('admin-users').addEventListener('click', async (event) => {
+      const button = event.target.closest('button[data-action]');
+      if (!button) return;
+      const { action, id, value } = button.dataset;
+      const prompts = {
+        role: `Change this user's role to ${value}?`,
+        verification: `${value === 'true' ? 'Verify' : 'Remove verification for'} this account?`,
+        status: `${value === 'true' ? 'Enable' : 'Disable'} this account?`
+      };
+      if (!window.confirm(prompts[action])) return;
+      const paths = {
+        role: 'role',
+        verification: 'verification',
+        status: 'status'
+      };
+      try {
+        await adminApi(`/api/v2/admin/users/${encodeURIComponent(id)}/${paths[action]}`, {
+          method: 'PATCH',
+          body: JSON.stringify(
+            action === 'role'
+              ? { role: value }
+              : action === 'verification'
+                ? { is_verified: value === 'true' }
+                : { is_active: value === 'true' }
+          )
+        });
+        await loadAdminData();
+      } catch (error) {
+        adminMessage.textContent = error.message || 'Account update failed.';
+      }
+    });
+    document.getElementById('admin-logout').addEventListener('click', async () => {
+      try {
+        await adminApi('/api/v2/auth/logout', { method: 'POST' });
+      } catch (error) {
+        adminMessage.textContent = error.message || 'Sign out could not be confirmed.';
+      } finally {
+        localStorage.removeItem('nexus_token');
+        window.location.assign('/');
+      }
+    });
+    loadAdminData();
+  </script>
+</body>
+</html>

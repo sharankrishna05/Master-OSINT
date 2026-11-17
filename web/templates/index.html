@@ -577,6 +577,9 @@
 
       <!-- Quick Action Buttons -->
       <div class="flex items-center gap-1.5 ml-1">
+        <button type="button" id="admin-panel-link" onclick="window.location.href='/admin'" class="hidden px-2.5 py-1.5 bg-[#ff003c]/15 hover:bg-[#ff003c]/25 border border-[#ff003c]/40 text-[#ff6380] rounded font-bold mono text-xs flex items-center gap-1 cursor-pointer transition-all" title="Open administrator dashboard">
+          <span>🛡️</span> <span>ADMIN</span>
+        </button>
         <!-- A.R.I.A. AI ASSISTANT OPERATIVE TRIGGER (TOP RIGHT) -->
         <button type="button" onclick="toggleAIAssistant()" id="aria-header-trigger-btn" class="relative group px-3 py-1.5 bg-[#00f5ff]/15 hover:bg-[#00f5ff]/30 border-2 border-[#00f5ff] text-[#00f5ff] hover:text-white rounded-lg font-bold mono text-xs flex items-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(0,245,255,0.35)] transition-all" title="Launch A.R.I.A. Autonomous AI Assistant">
           <div class="relative w-5 h-5 flex items-center justify-center">
@@ -9146,6 +9149,13 @@
 
       const btnText = document.getElementById('user-auth-btn-text');
       if (btnText) btnText.innerText = localStorage.getItem('nexus_token') ? 'LOGOUT' : 'LOGIN';
+      const adminLink = document.getElementById('admin-panel-link');
+      if (adminLink) {
+        adminLink.classList.toggle(
+          'hidden',
+          !(currentUser && currentUser.role === 'admin' && localStorage.getItem('nexus_token'))
+        );
+      }
 
     }
 

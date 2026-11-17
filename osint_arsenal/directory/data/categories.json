@@ -1,0 +1,15 @@
+[
+  {"id": "people-search", "name": "People Search",  "icon": "👤"},
+  {"id": "social-media",  "name": "Social Media",   "icon": "💬"},
+  {"id": "domain-ip",     "name": "Domain & IP",    "icon": "🌐"},
+  {"id": "email",         "name": "Email",          "icon": "📧"},
+  {"id": "phone",         "name": "Phone",          "icon": "📱"},
+  {"id": "username",      "name": "Username",       "icon": "🔤"},
+  {"id": "geolocation",   "name": "Geolocation",    "icon": "📍"},
+  {"id": "image-video",   "name": "Image & Video",  "icon": "🖼️"},
+  {"id": "dark-web",      "name": "Dark Web",       "icon": "🕶️"},
+  {"id": "link-analysis", "name": "Link Analysis",  "icon": "🕸️"},
+  {"id": "threat-intel",  "name": "Threat Intel",   "icon": "🛡️"},
+  {"id": "frameworks",    "name": "Frameworks",     "icon": "🧰"},
+  {"id": "utilities",     "name": "Utilities",      "icon": "🔧"}
+]

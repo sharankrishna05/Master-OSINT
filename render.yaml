@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: nexus-osint-arsenal
+    env: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: ARSENAL_HOST
+        value: 0.0.0.0
+      - key: ARSENAL_DATA_DIR
+        value: /app/data
+      - key: ARSENAL_JWT_SECRET
+        generateValue: true
+      - key: ARSENAL_DEFAULT_KEYS
+        sync: false
+      - key: HIBP_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false

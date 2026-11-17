@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSINT-HUB Dossier // {{ target }}</title>
+  <style>
+    :root {
+      --bg: #030712;
+      --card-bg: #091322;
+      --border: #1a2e4c;
+      --neon-cyan: #00f5ff;
+      --neon-green: #39ff14;
+      --neon-amber: #eab308;
+      --neon-red: #ff003c;
+      --text-dim: #7ba3c0;
+      --text-bright: #f0f6fc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text-bright);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", monospace;
+      line-height: 1.5;
+      padding: 2rem;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .brand { font-size: 1.5rem; font-weight: 800; color: var(--neon-cyan); letter-spacing: 2px; }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .badge-cyan { background: rgba(0, 245, 255, 0.15); color: var(--neon-cyan); border: 1px solid var(--neon-cyan); }
+    .badge-green { background: rgba(57, 255, 20, 0.15); color: var(--neon-green); border: 1px solid var(--neon-green); }
+    .badge-amber { background: rgba(234, 179, 8, 0.15); color: var(--neon-amber); border: 1px solid var(--neon-amber); }
+    .badge-red { background: rgba(255, 0, 60, 0.15); color: var(--neon-red); border: 1px solid var(--neon-red); }
+    
+    .meta-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .meta-item .label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; }
+    .meta-item .val { font-size: 1.1rem; font-weight: 700; color: #fff; word-break: break-all; }
+
+    h2 {
+      font-size: 1.2rem;
+      color: var(--neon-green);
+      margin: 1.5rem 0 0.75rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      background: var(--card-bg);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    th {
+      background: #0d1b2e;
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    tr:hover { background: rgba(0, 245, 255, 0.03); }
+    a { color: var(--neon-cyan); text-decoration: none; word-break: break-all; }
+    a:hover { text-decoration: underline; }
+    
+    .code-box {
+      background: #020610;
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      font-family: monospace;
+      color: var(--neon-green);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-copy {
+      background: #12253f;
+      color: var(--neon-cyan);
+      border: 1px solid #1a3a60;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 0.75rem;
+    }
+    .btn-copy:hover { background: var(--neon-cyan); color: #000; }
+    .notice {
+      background: rgba(234, 179, 8, 0.08);
+      border-left: 3px solid var(--neon-amber);
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+      color: #fef08a;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-align: center;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="brand">OSINT-HUB DOSSIER</div>
+        <div style="font-size: 0.85rem; color: var(--text-dim);">Evidence Correlation & Automated Reconnaissance Output</div>
+      </div>
+      <div>
+        <span class="badge badge-green">Report Generated: {{ timestamp }}</span>
+      </div>
+    </header>
+
+    <div class="meta-card">
+      <div class="meta-item">
+        <div class="label">Target Indicator</div>
+        <div class="val">{{ target }}</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Detected Typology</div>
+        <div class="val"><span class="badge badge-cyan">{{ target_type }}</span></div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Detection Confidence</div>
+        <div class="val">{{ (confidence * 100) | round(1) }}%</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Knowledge Sections</div>
+        <div class="val" style="font-size: 0.85rem;">{{ sections_queried | join(', ') }}</div>
+      </div>
+    </div>
+
+    {% if empty_categories_notice %}
+      {% for notice in empty_categories_notice %}
+        <div class="notice">⚠ {{ notice }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <!-- PHASE B: DIRECT API HITS -->
+    <h2>⚡ Automated API Enrichment (Phase B)</h2>
+    {% if api_results %}
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Status</th>
+            <th>Telemetry / Findings Summary</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in api_results %}
+            <tr>
+              <td style="font-weight: 700;">{{ r.service }}</td>
+              <td>
+                {% if r.status == "SUCCESS" %}
+                  <span class="badge badge-green">SUCCESS</span>
+                {% elif r.status == "NOT_FOUND" %}
+                  <span class="badge badge-amber">NOT FOUND</span>
+                {% elif r.status == "SKIPPED" %}
+                  <span class="badge badge-cyan">SKIPPED</span>
+                {% else %}
+                  <span class="badge badge-red">{{ r.status }}</span>
+                {% endif %}
+              </td>
+              <td>{{ r.summary }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1.5rem;">No automated Phase B APIs mapped for this target typology.</p>
+    {% endif %}
+
+    <!-- PHASE A: SAFE AUTO-OPEN TOOLS -->
+    <h2>🌐 Web Intelligence Tools (Safe Auto-Open) [{{ auto_open | length }}]</h2>
+    {% if auto_open %}
+      <table>
+        <thead>
+          <tr>
+            <th>Tool Name</th>
+            <th>Section & Category</th>
+            <th>Target URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in auto_open %}
+            <tr>
+              <td style="font-weight: 700;">
+                {{ item.tool.tool_name }}
+                {% if item.tool.is_unverified %}<span title="Unverified Source" style="color: var(--neon-amber);"> ⚠</span>{% endif %}
+                {% if item.tool.description %}
+                  <div style="font-size: 0.75rem; color: #7ba3c0; font-weight: normal; margin-top: 3px;">{{ item.tool.description }}</div>
+                {% endif %}
+              </td>
+              <td><span style="color: var(--text-dim);">{{ item.tool.section }} &rsaquo; {{ item.tool.category }}</span></td>
+              <td><a href="{{ item.populated_url }}" target="_blank" rel="noopener noreferrer">{{ item.populated_url }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1.5rem;">No free web tools available without registration or local install for this section.</p>
+    {% endif %}
+
+    <!-- MANUAL CLI FOLLOW-UPS [T] -->
+    <h2>💻 Manual Follow-ups (Local CLI Tools [T]) [{{ manual_followups | length }}]</h2>
+    {% if manual_followups %}
+      <table>
+        <thead>
+          <tr>
+            <th>Tool Name</th>
+            <th>Section</th>
+            <th>Copy-Paste Execution Command</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in manual_followups %}
+            <tr>
+              <td style="font-weight: 700;">
+                {{ item.tool.tool_name }}
+                {% if item.tool.is_unverified %}<span title="Unverified Source" style="color: var(--neon-amber);"> ⚠</span>{% endif %}
+                {% if item.tool.description %}
+                  <div style="font-size: 0.75rem; color: #7ba3c0; font-weight: normal; margin-top: 3px;">{{ item.tool.description }}</div>
+                {% endif %}
+              </td>
+              <td><span style="color: var(--text-dim);">{{ item.tool.section }} &rsaquo; {{ item.tool.category }}</span></td>
+              <td>
+                <div class="code-box">
+                  <code>{{ item.cli_command }}</code>
+                  <button class="btn-copy" onclick="navigator.clipboard.writeText('{{ item.cli_command }}')">COPY</button>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1.5rem;">No local CLI tools found for this target typology.</p>
+    {% endif %}
+
+    <!-- SKIPPED ENTRIES (R / D) -->
+    <h2>🔒 Skipped Resources (Requires Registration [R] or Dorks [D]) [{{ skipped | length }}]</h2>
+    {% if skipped %}
+      <table>
+        <thead>
+          <tr>
+            <th>Tool Name</th>
+            <th>Reason Skipped</th>
+            <th>Resource Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in skipped %}
+            <tr>
+              <td style="font-weight: 700;">
+                {{ item.tool.tool_name }}
+                {% if item.tool.is_unverified %}<span title="Unverified Source" style="color: var(--neon-amber);"> ⚠</span>{% endif %}
+                {% if item.tool.description %}
+                  <div style="font-size: 0.75rem; color: #7ba3c0; font-weight: normal; margin-top: 3px;">{{ item.tool.description }}</div>
+                {% endif %}
+              </td>
+              <td>
+                <span class="badge {% if 'registration' in (item.skip_reason or '') %}badge-amber{% else %}badge-cyan{% endif %}">
+                  {{ item.skip_reason }}
+                </span>
+              </td>
+              <td><a href="{{ item.populated_url }}" target="_blank" rel="noopener noreferrer">{{ item.populated_url }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+
+    <footer>
+      Generated strictly via osint-hub Embedded Catalogue Knowledge Base. No scraping of registration sites, no automated execution of local CLI tools.
+    </footer>
+  </div>
+</body>
+</html>

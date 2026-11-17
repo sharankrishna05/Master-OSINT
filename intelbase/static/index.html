@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntelBase // Asynchronous Email OSINT & Breach Intelligence</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Orbitron:wght@700;900&display=swap');
+    body {
+      background-color: #030712;
+      color: #f3f4f6;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .orbitron { font-family: 'Orbitron', sans-serif; }
+    .scanline {
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 100% 2px, 3px 100%;
+    }
+    .neon-border {
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.2), inset 0 0 15px rgba(0, 245, 255, 0.05);
+    }
+  </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 scanline">
+  <div class="max-w-6xl mx-auto space-y-6">
+
+    <!-- Header -->
+    <header class="p-5 rounded-2xl bg-[#091527] border border-[#1a365d] neon-border flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-xl bg-[#030914] border-2 border-[#00f5ff] flex items-center justify-center text-2xl shadow-[0_0_15px_rgba(0,245,255,0.4)]">
+          ⚡
+        </div>
+        <div>
+          <h1 class="orbitron text-xl md:text-2xl font-black text-white tracking-wider flex items-center gap-2">
+            INTELBASE <span class="text-xs px-2 py-0.5 rounded bg-[#00f5ff]/20 text-[#00f5ff] border border-[#00f5ff]/40 font-mono">EMAIL OSINT PROTOTYPE</span>
+          </h1>
+          <p class="text-xs text-[#7ba3c0]">Asynchronous Multi-Site Footprint Enumeration & HIBP Breach Intelligence</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 text-xs">
+        <span class="px-2.5 py-1 rounded bg-[#39ff14]/15 text-[#39ff14] border border-[#39ff14]/30 font-bold" id="stream-status-badge">
+          ● SSE READY
+        </span>
+        <a href="/docs" target="_blank" class="px-3 py-1 rounded bg-[#00f5ff]/10 hover:bg-[#00f5ff]/25 border border-[#00f5ff]/30 text-[#00f5ff] transition-all">
+          API DOCS ↗
+        </a>
+      </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="p-6 rounded-2xl bg-[#071326] border border-[#162a4a] space-y-3">
+      <label class="block text-xs font-bold text-gray-300 orbitron">TARGET EMAIL INVESTIGATION</label>
+      <form onsubmit="startInvestigation(event)" class="flex flex-col sm:flex-row gap-2">
+        <div class="relative flex-1">
+          <input
+            type="email"
+            id="target-email"
+            required
+            placeholder="e.g. test@example.com, target@corp.com"
+            class="w-full bg-[#030712] border border-[#1e3a5f] focus:border-[#00f5ff] text-white p-3 rounded-xl outline-none text-sm font-mono shadow-inner transition-all placeholder:text-gray-600"
+          />
+        </div>
+        <button
+          type="submit"
+          id="btn-scan"
+          class="px-6 py-3 bg-[#00f5ff] hover:bg-[#00f5ff]/80 text-[#040a17] font-black rounded-xl text-xs orbitron flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(0,245,255,0.4)] cursor-pointer shrink-0"
+        >
+          <span>ASYNC PROBE</span>
+          <span>➤</span>
+        </button>
+      </form>
+
+      <!-- Quick Preset Chips -->
+      <div class="flex items-center gap-2 text-xs text-gray-400 flex-wrap pt-1">
+        <span>Quick Test:</span>
+        <button onclick="setQuery('security@github.com')" class="px-2 py-0.5 rounded bg-[#12253f] hover:bg-[#1a365d] text-gray-300 text-[11px]">security@github.com</button>
+        <button onclick="setQuery('admin@nostromo.sec')" class="px-2 py-0.5 rounded bg-[#12253f] hover:bg-[#1a365d] text-gray-300 text-[11px]">admin@nostromo.sec</button>
+        <button onclick="setQuery('torvalds@linux-foundation.org')" class="px-2 py-0.5 rounded bg-[#12253f] hover:bg-[#1a365d] text-gray-300 text-[11px]">torvalds@linux-foundation.org</button>
+      </div>
+    </div>
+
+    <!-- Live Progress Bar -->
+    <div id="progress-container" class="hidden p-4 rounded-xl bg-[#051122] border border-[#12253f] space-y-2">
+      <div class="flex justify-between items-center text-xs">
+        <span class="text-[#00f5ff] font-bold" id="progress-label">DISPATCHING ASYNCHRONOUS CHECKERS...</span>
+        <span class="text-gray-400 font-mono" id="progress-percent">0%</span>
+      </div>
+      <div class="w-full bg-[#030712] rounded-full h-2 overflow-hidden border border-[#162a4a]">
+        <div id="progress-bar" class="bg-gradient-to-r from-[#00f5ff] to-[#39ff14] h-2 transition-all duration-300 w-0"></div>
+      </div>
+    </div>
+
+    <!-- Threat Intelligence Summary Row -->
+    <div id="summary-cards" class="hidden grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- Risk Score Card -->
+      <div class="p-4 rounded-xl bg-[#091527] border border-[#162a4a] flex flex-col justify-between">
+        <div class="text-xs text-gray-400 uppercase orbitron">RISK ASSESSMENT</div>
+        <div class="flex items-baseline gap-2 my-2">
+          <span class="text-3xl font-black orbitron" id="card-risk-score">--</span>
+          <span class="text-xs font-bold px-2 py-0.5 rounded" id="card-risk-badge">PENDING</span>
+        </div>
+        <div class="text-[10px] text-gray-400 line-clamp-2" id="card-risk-reasoning">Awaiting scan telemetry...</div>
+      </div>
+
+      <!-- Confirmed Registered Sites -->
+      <div class="p-4 rounded-xl bg-[#091527] border border-[#162a4a] flex flex-col justify-between">
+        <div class="text-xs text-gray-400 uppercase orbitron">CONFIRMED ACCOUNTS</div>
+        <div class="text-3xl font-black text-[#39ff14] orbitron my-2" id="card-registered-count">0</div>
+        <div class="text-[10px] text-gray-400" id="card-sites-ratio">0 of 0 sites enumerated</div>
+      </div>
+
+      <!-- HIBP Breach Incidents -->
+      <div class="p-4 rounded-xl bg-[#091527] border border-[#162a4a] flex flex-col justify-between">
+        <div class="text-xs text-gray-400 uppercase orbitron">BREACH EXPOSURES</div>
+        <div class="text-3xl font-black text-[#ff003c] orbitron my-2" id="card-breach-count">0</div>
+        <div class="text-[10px] text-gray-400" id="card-breach-status">Checking HIBP database...</div>
+      </div>
+
+      <!-- Password Exposure Status -->
+      <div class="p-4 rounded-xl bg-[#091527] border border-[#162a4a] flex flex-col justify-between">
+        <div class="text-xs text-gray-400 uppercase orbitron">PASSWORD COMPROMISE</div>
+        <div class="text-2xl font-black text-[#ffd60a] orbitron my-2" id="card-pw-status">CLEAN</div>
+        <div class="text-[10px] text-gray-400">Plaintext / reversible hash status</div>
+      </div>
+    </div>
+
+    <!-- Main Results Grid: Site Checkers (Left) & HIBP Breaches (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- Live Streamed Site Checkers (2 cols on large screens) -->
+      <div class="lg:col-span-2 space-y-3">
+        <div class="flex justify-between items-center px-1">
+          <h2 class="orbitron text-sm font-bold text-[#00f5ff] flex items-center gap-2">
+            <span>🌐</span> <span>ACCOUNT FOOTPRINT MATRIX</span>
+          </h2>
+          <span class="text-xs text-gray-500 font-mono" id="results-count-label">Awaiting input</span>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl bg-[#071326] border border-[#162a4a] shadow-xl">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs font-mono border-collapse">
+              <thead class="bg-[#030914] text-gray-400 uppercase text-[11px] border-b border-[#162a4a]">
+                <tr>
+                  <th class="p-3">PLATFORM</th>
+                  <th class="p-3">CATEGORY</th>
+                  <th class="p-3">STATUS</th>
+                  <th class="p-3">LATENCY</th>
+                  <th class="p-3 text-right">ACTION</th>
+                </tr>
+              </thead>
+              <tbody id="results-tbody" class="divide-y divide-[#12253f]">
+                <tr>
+                  <td colspan="5" class="p-8 text-center text-gray-500">
+                    Enter an email address above to dispatch real-time asynchronous checkers.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breach Intelligence Records (1 col) -->
+      <div class="space-y-3">
+        <div class="flex justify-between items-center px-1">
+          <h2 class="orbitron text-sm font-bold text-[#ff003c] flex items-center gap-2">
+            <span>🛡️</span> <span>HIBP BREACH RECORDS</span>
+          </h2>
+          <span class="text-xs text-gray-500 font-mono" id="breach-count-badge">0 Breaches</span>
+        </div>
+
+        <div id="breach-container" class="rounded-2xl p-4 bg-[#071326] border border-[#162a4a] space-y-3 min-h-[300px] max-h-[520px] overflow-y-auto">
+          <div class="text-center text-gray-500 py-12 text-xs">
+            No active breach search yet.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="static/js/sse_client.js"></script>
+</body>
+</html>

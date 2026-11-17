@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osint-arsenal"
+version = "2.0.0"
+description = "Unified OSINT toolkit: directory, lookups, web-check, graphs, consensus, Nexus Account Sentinel, OSINT-HUB, DorkForge, MCP"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi", "uvicorn[standard]", "pydantic", "httpx", "aiohttp", "aiosqlite",
+  "dnspython", "python-whois", "phonenumbers", "networkx", "jinja2",
+  "python-multipart", "python-dotenv", "bcrypt", "PyJWT", "beautifulsoup4",
+  "Pillow", "requests", "pyyaml", "rich", "typer",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio"]
+mcp = ["mcp>=1.1.0"]
+ai = ["google-generativeai>=0.8.0"]
+all = ["osint-arsenal[dev,mcp,ai]"]
+
+[project.scripts]
+arsenal = "osint_arsenal.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["osint_arsenal*", "intelbase*", "osint_hub*", "dorkforge*"]
+
+[tool.setuptools.package-data]
+osint_arsenal = ["data/*.json"]
+osint_hub = ["data/*.txt", "templates/*.j2"]
+dorkforge = ["generator/*.yaml"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["."]
+testpaths = ["tests", "intelbase/tests"]

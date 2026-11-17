@@ -1,0 +1,1195 @@
+# USERNAME
+Username Search Engines — WhatsMyName Web — https://whatsmyname.app/
+Username Search Engines — WhatsMyName [T] — https://github.com/WebBreacher/WhatsMyName
+Username Search Engines — Sylva Identity Discovery [T] — https://sylva.pfeister.dev/
+Username Search Engines — Sherlock [T] — https://github.com/sherlock-project/sherlock
+Username Search Engines — Namechk — https://namechk.com/
+Username Search Engines — Thats Them — https://thatsthem.com/
+Username Search Engines — NameCheckup — https://namecheckup.com/
+Username Search Engines — FootprintIQ — https://footprintiq.app
+Username Search Engines — GitFive [T/R] — https://github.com/mxrch/GitFive
+Username Search Engines — Sherlock [T] — https://github.com/sherlock-project/sherlock
+Username Search Engines — Names Directory — https://namesdir.com/
+Username Search Engines — Lullar — https://com.lullar.com
+Specific Sites — Amazon Usernames [D/M] — https://www.google.com/search?q=site:amazon.com+%3Cusername%3E
+Specific Sites — Github User [M] — https://api.github.com/users/%3Cusername%3E/events/public
+Specific Sites — Tinder Usernames [M] — https://www.gotinder.com/@%3Cusername%3E
+Specific Sites — Keybase — https://keybase.io/
+Specific Sites — MIT PGP Key Server — https://pgp.mit.edu/
+Specific Sites — ProtonMail users [M] — https://api.protonmail.ch/pks/lookup?op=index&search=@protonmail.com
+Specific Sites — ProtonMail Domains [M] — https://api.protonmail.ch/pks/lookup?op=index&search=<email_address>
+
+# EMAIL ADDRESS
+Email Search — Sylva Identity Discovery [T] — https://sylva.pfeister.dev/
+Email Search — ThatsThem — https://thatsthem.com/reverse-email-lookup
+Email Search — Hunter — https://hunter.io/
+Email Search — Email to Address [R] — https://www.melissa.com/
+Email Search — VoilaNorbert — https://www.voilanorbert.com/
+Email Search — GHunt [T] — https://github.com/mxrch/GHunt
+Email Search — OSINT Industries — https://www.osint.industries/
+Email Search — theHarvester [T] — https://github.com/laramies/theHarvester
+Email Search — Infoga [T/D] — https://github.com/m4ll0k/infoga
+Email Search — Skymem — https://www.skymem.info/
+Email Search — Epieos Email Tool — https://tools.epieos.com/email.php
+Email Search — breach.vip — https://breach.vip/
+Email Search — Holehe [T] — https://github.com/megadose/holehe
+Common Email Formats — Email Format [M] — https://www.email-format.com/
+Common Email Formats — Email Permutator — https://metricsparrow.com/toolkit/email-permutator/
+Email Verification — Reacher Github [T] — https://github.com/reacherhq/check-if-email-exists
+Email Verification — Reacher Demo — https://reacher.email
+Email Verification — MailScrap — https://mailscrap.com/
+Email Verification — Read Notify — https://www.readnotify.com/
+Email Verification — Email Reputation — https://emailrep.io/
+Email Verification — MailboxValidator [R] — https://www.mailboxvalidator.com/demo
+Email Verification — VerifyEmail [R] — https://emailable.com/ (unverified)
+Email Verification — Disposable Email Domains [T] — https://github.com/disposable-email-domains/disposable-email-domains
+Email Verification — Disposable Emails Registry — https://disposable-emails.github.io/
+Email Verification — Burner Email Providers [T] — https://github.com/wesbos/burner-email-providers
+Breach Data — Have I been pwned? [R] — https://haveibeenpwned.com/
+Breach Data — Hudson Rock — https://www.hudsonrock.com/threat-intelligence-cybercrime-tools
+Breach Data — DeHashed [R] — https://dehashed.com/
+Breach Data — Vigilante.pw — https://www.vigilante.pw/
+Mail Blacklists — MxToolbox — https://mxtoolbox.com/
+
+# DOMAIN NAME
+Whois Records — Domain Dossier — https://centralops.net/co/DomainDossier.aspx
+Whois Records — domainIQ [R] — https://www.domainiq.com/
+Whois Records — DomainTools Whois [R] — https://whois.domaintools.com/
+Whois Records — SWITCH Internet Domains Whois (.ch) — https://www.nic.ch/whois/
+Whois Records — Whoisology — https://whoisology.com/#advanced
+Whois Records — Whois ARIN — https://whois.arin.net/ui/advanced.jsp
+Whois Records — DNSstuff — https://www.dnsstuff.com/freetools
+Whois Records — Robtex [R] — https://robtex.com/
+Whois Records — Domaincrawler.com [R] — https://domaincrawler.com/
+Whois Records — MarkMonitor Whois Search [R] — https://domains.markmonitor.com/whois/
+Whois Records — easyWhois — https://www.easywhois.com/
+Whois Records — Website Informer — https://website.informer.com/
+Whois Records — Who.is — https://who.is/
+Whois Records — Whois AMPed — https://whoisamped.com/
+Whois Records — ViewDNS.info — https://viewdns.info/
+Whois Records — Daily DNS Changes — https://dailychanges.domaintools.com/
+Whois Records — IP2WHOIS — https://www.ip2whois.com
+Whois Records — Netlas.io — https://app.netlas.io/whois_domains/
+Subdomains — SynapsInt — https://synapsint.com
+Subdomains — Aquatone [T] — https://github.com/michenriksen/aquatone
+Subdomains — FindSubDomains — https://findsubdomains.com/
+Subdomains — Google Subdomains [D/M] — https://www.google.com/?gws_rd=ssl#q=site:%3Cdomain.com%3E
+Subdomains — Recon-ng [T] — https://github.com/lanmaster53/recon-ng
+Subdomains — XRay [T] — https://github.com/evilsocket/xray
+Subdomains — DNS Recon [T] — https://github.com/darkoperator/dnsrecon
+Subdomains — Gobuster [T] — https://github.com/OJ/gobuster
+Subdomains — Fierce Domain Scanner [T] — https://github.com/davidpepper/fierce-domain-scanner
+Subdomains — Bluto [T] — https://github.com/darryllane/Bluto
+Subdomains — OWASP Maryam [T] — https://github.com/saeeddhqan/Maryam
+Subdomains — theHarvester [T] — https://github.com/laramies/theHarvester
+Subdomains — Pentest-tools.com Subdomains [R] — https://pentest-tools.com/information-gathering/find-subdomains-of-domain
+Subdomains — SecLists DNS Subdomains [T] — https://github.com/danielmiessler/SecLists/tree/master/Discovery/DNS
+Subdomains — dnspop [T] — https://github.com/bitquark/dnspop
+Subdomains — gdns [T] — https://github.com/hrbrmstr/gdns
+Subdomains — Sublist3r [T] — https://github.com/aboul3la/Sublist3r
+Subdomains — AltDNS [T] — https://github.com/infosec-au/altdns
+Subdomains — Netlas.io — https://app.netlas.io/domains/
+Discovery — Shodan [R] — https://www.shodan.io/
+Discovery — Netlas.io — https://app.netlas.io/
+Discovery — Kraken [T] — https://github.com/Sw4mpf0x/Kraken
+Discovery — Online Nikto scanner — https://nikto.online/
+Discovery — urlscan.io [R/M] — https://urlscan.io/search/#*
+Discovery — Daily DNS Changes — https://dailychanges.domaintools.com/
+Discovery — Redirect Detective [M] — https://redirectdetective.com/
+Discovery — Sitediff [T/M] — https://github.com/digininja/sitediff
+Discovery — BuiltWith — https://builtwith.com/
+Discovery — Wappalyzer [R] — https://www.wappalyzer.com/
+Discovery — AnalyzeID [M] — https://analyzeid.com/
+Discovery — Criminal IP Search [R] — https://www.criminalip.io/
+Discovery — urlDNA [R/M] — https://urldna.io
+Discovery — ZoomEye.ai [R/D] — https://www.zoomeye.org/
+Certificate Search — Shodan — https://www.shodan.io/ (unverified)
+Certificate Search — Google's Certificate Transparency — https://www.certificate-transparency.org/known-logs
+Certificate Search — Spyse [R] — https://spyse.com/search/certificate
+Certificate Search — Censys [R] — https://censys.io/
+Certificate Search — crt.sh - Certificate Search [M] — https://crt.sh/?q=%3Cdomain%3E
+Certificate Search — CertKit - Certificate Transparency Log Search — https://www.certkit.io/tools/ct-logs/
+Certificate Search — certgraph [T] — https://github.com/lanrat/certgraph
+Certificate Search — Netlas.io — https://app.netlas.io/certs/
+PassiveDNS — Mnemonic — https://passivedns.mnemonic.no/
+PassiveDNS — DNS Dumpster — https://dnsdumpster.com/
+PassiveDNS — Deteque [R] — https://www.deteque.com/
+Reputation — UrlQuery.net — https://urlquery.net/
+Reputation — URL Void — https://www.urlvoid.com/
+Reputation — FortiGuard Reputation Service [M] — https://fortiguard.com/iprep
+Reputation — Trend Micro Site Safety Center — https://global.sitesafety.trendmicro.com/
+Reputation — WatchGuard ReputationAuthority — https://www.reputationauthority.org/
+Reputation — Sucuri SiteCheck — https://sitecheck.sucuri.net/
+Reputation — ThreatMiner.org — https://www.threatminer.org/
+Reputation — BlueCoat WebPulse [M] — https://sitereview.bluecoat.com/sitereview.jsp
+Reputation — Zscaler Zulu URL Risk Analyzer — https://zulu.zscaler.com/
+Reputation — Joe Sandbox Url Analyzer [R] — https://www.url-analyzer.net/
+Reputation — Deepviz Domain Search [R] — https://search.deepviz.com/
+Reputation — AVG Threat Labs — https://www.avg.com/en/signal/website-safety
+Reputation — Webroot BrightCloud URL/IP Lookup — https://www.brightcloud.com/tools/url-ip-lookup.php
+Reputation — vURL Online — https://vurldissect.co.uk/
+Reputation — AlienVault Open Threat Exchange [R] — https://otx.alienvault.com/browse/pulses/
+Reputation — Malware Domain List — https://www.malwaredomainlist.com/mdl.php
+Reputation — Web Inspector Online Scan — https://www.webinspector.com/website-malware-scanner/
+Reputation — Google Safe Browsing API [R] — https://developers.google.com/safe-browsing/?csw=1
+Reputation — Cisco Talos — https://talosintelligence.com/
+Domain Blacklists — Threatexpert.com Malicious URLs — https://www.networksec.org/grabbho/block.txt (unverified)
+Domain Blacklists — Zeus C2 Tracker — https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
+Domain Blacklists — Malware Domains Blacklist — https://mirror1.malwaredomains.com/files/domains.txt (unverified)
+Domain Blacklists — Blackweb [T] — https://github.com/maravento/blackweb
+Domain Blacklists — Critical Stack Intel [T/R] — https://intel.criticalstack.com/
+Domain Blacklists — DNS Sinkhole — https://malc0de.com/bl/
+Domain Blacklists — DNS-BH Malware Domain Blocklist — https://www.malwaredomains.com/wordpress/?page_id=66 (unverified)
+Domain Blacklists — Malware Domain List — https://www.malwaredomainlist.com/hostslist/hosts.txt
+Domain Blacklists — MalwareURL [R] — https://www.malwareurl.com/index.php
+Domain Blacklists — scumware.org — https://www.scumware.org/
+Domain Blacklists — ZeuS Tracker — https://zeustracker.abuse.ch/blocklist.php
+Domain Blacklists — Shadowserver Foundation — https://www.shadowserver.org/
+Domain Blacklists — Email Domain Validation [R] — https://www.mailboxvalidator.com/domain
+Typosquatting — DNS Twist [T] — https://github.com/elceef/dnstwist
+Typosquatting — URLCrazy [T] — https://www.morningstarsecurity.com/research/urlcrazy
+Typosquatting — dnstwister — https://dnstwister.report/
+Typosquatting — Catphish [T] — https://github.com/ring0lab/catphish
+Analytics — BuiltWith — https://builtwith.com/
+Analytics — SiteSleuth — https://www.sitesleuth.io/
+Analytics — Wappalyzer [T/R] — https://www.wappalyzer.com/
+Analytics — SEMrush [R] — https://www.semrush.com/
+Analytics — Moonsearch [M] — https://moonsearch.com/
+Analytics — Ewhois — https://www.ewhois.com/
+Analytics — StatsCrop — https://www.statscrop.com/
+Analytics — Open Site Explorer [R/M] — https://moz.com/link-explorer
+Analytics — SpyOnWeb [R] — https://www.spyonweb.com/
+Analytics — Keyword Density — https://tools.seobook.com/general/keyword-density/
+Analytics — Alexa Site Statistics [M] — https://alexa.amazon.com/about (unverified)
+Analytics — Cisco Umbrella Popularity List — https://s3-us-west-1.amazonaws.com/umbrella-static/index.html
+Analytics — Alexa Top 500 Global Sites [M] — https://alexa.amazon.com/about (unverified)
+Analytics — Sitedossier — https://www.sitedossier.com/
+Analytics — Visual Site Mapper [T] — https://github.com/alentum/sitemapper-nodejs
+Analytics — ClearWebStats.com — https://www.clearwebstats.com/
+Analytics — PubDB [M] — https://pub-db.com/ (unverified)
+Analytics — SimilarWeb [R] — https://www.similarweb.com/
+Analytics — Siteliner [R] — https://www.siteliner.com/
+Analytics — WhatWeb [T] — https://github.com/urbanadventurer/WhatWeb
+URL Expanders — Link Expander — https://www.linkexpander.com/
+URL Expanders — CheckShortURL — https://checkshorturl.com/
+URL Expanders — URL Expander — https://urlex.org/
+URL Expanders — Where Does This Link Go? — https://wheregoes.com/
+URL Expanders — KnowURL [M] — https://www.knowurl.com/
+Change Detection — VisualPing [R] — https://visualping.io/
+Change Detection — Change Detection [T] — https://changedetection.io/
+Change Detection — UPcheck — https://upcheck.online/ (unverified)
+Change Detection — Follow That Page [R] — https://www.followthatpage.com/
+Change Detection — Urlwatch [T/M] — https://github.com/thp/urlwatch
+Change Detection — WatchThatPage [R] — https://watchthatpage.com/
+Change Detection — ChangeDetect [T/M] — https://changedetection.io/
+Social Analysis — Google Trends — https://trends.google.com/trends/
+DNSSEC — DNSSEC Analyzer — https://dnssec-analyzer.verisignlabs.com/
+DNSSEC — DNSViz — https://dnsviz.net/
+Vulnerabilities > Scanners — Sn1per [T] — https://github.com/1N3/Sn1per
+Vulnerabilities > Scanners — Online Nikto scanner — https://nikto.online/
+Vulnerabilities > Scanners — Web Data Exposure Scanner [T] — https://github.com/eduardoit/web-data-exposure-scanner
+Vulnerabilities > Disclosure Sites — Zone-H.org — https://zone-h.org/archive
+Vulnerabilities — RobotsDisallowed [T] — https://github.com/danielmiessler/RobotsDisallowed
+Tools — Belati [T] — https://github.com/aancw/Belati
+Tools — Burp Suite [T] — https://portswigger.net/burp
+Tools — EyeWitness [T] — https://github.com/ChrisTruncer/EyeWitness
+Tools — Hunting-New-Registered-Domains [T] — https://github.com/gfek/Hunting-New-Registered-Domains
+Tools — International Domain Name Conversion Tool — https://mct.verisign-grs.com/
+Tools — Online Nikto scanner — https://nikto.online/
+Report Malicious Sites — Windows Defender Security Intelligence (WDSI) — https://www.microsoft.com/en-us/wdsi
+Report Malicious Sites — Google Safe Browsing [D] — https://safebrowsing.google.com/
+
+# IP & MAC ADDRESS
+Geolocation — MaxMind Demo — https://www.maxmind.com/en/home
+Geolocation — IPv4/IPv6 lists by country code [M] — https://github.com/ipverse/
+Geolocation — IP2Location.com [R] — https://www.ip2location.com/demo
+Geolocation — IP Fingerprints — https://ipfingerprints.com/
+Geolocation — DB-IP — https://db-ip.com/
+Geolocation — IP Location Finder — https://www.iplocation.net/
+Geolocation — Info Sniper [R] — https://www.infosniper.net/
+Geolocation — utrace — https://en.utrace.de/
+Host / Port Discovery — urlscan.io — https://urlscan.io/search/#*
+Host / Port Discovery — Spyse [R] — https://spyse.com/search/ip
+Host / Port Discovery — Shodan [R] — https://www.shodan.io/
+Host / Port Discovery — Netlas.io [R] — https://netlas.io/
+Host / Port Discovery — Portmap — https://portmap.com/
+Host / Port Discovery — Scans.io — https://scans.io/
+Host / Port Discovery — Nmap [T] — https://nmap.org/download.html
+Host / Port Discovery — Online Port scanner — https://portscanner.online/
+Host / Port Discovery — Internet Census Search — https://www.exfiltrated.com/querystart.php
+Host / Port Discovery — Criminal IP Search [R] — https://www.criminalip.io/
+Host / Port Discovery — Scanless [T] — https://github.com/vesche/scanless
+Host / Port Discovery — BinaryEdge [R] — https://www.binaryedge.io/
+Host / Port Discovery — Masscan [T] — https://github.com/robertdavidgraham/masscan
+IPv4 — ASlookup.com [M] — https://aslookup.com/
+IPv4 — Port scanner Online — https://portscanner.online/
+IPv4 — Onyphe [R] — https://www.onyphe.io/
+IPv4 — IPv4 CIDR Report — https://www.cidr-report.org/as2.0/
+IPv4 — Reverse.report [R] — https://reverse.report/
+IPv4 — Team Cymru IP to ASN — https://asn.cymru.com/
+IPv4 — IP to ASN DB — https://iptoasn.com/
+IPv4 — Hacker Target - Reverse DNS — https://hackertarget.com/reverse-dns-lookup/
+IPv6 — IPv6 CIDR Report — https://www.cidr-report.org/v6/as2.0/
+BGP — Hurricane Electric BGP Toolkit — https://bgp.he.net/
+BGP — BGP Malicious Content Ranking — https://bgpranking.circl.lu/
+BGP — PeeringDB — https://www.peeringdb.com/advanced_search
+BGP — BGP Tools [M] — https://www.bgp4.as/tools
+Reputation — IP Void [R] — https://www.ipvoid.com/
+Reputation — ExoneraTor — https://exonerator.torproject.org/
+Reputation — Grey Noise [R] — https://viz.greynoise.io/
+Blacklists — Blocklist.de — https://www.blocklist.de/en/index.html
+Blacklists — DShield API — https://isc.sans.edu/api/
+Blacklists — FireHOL IP Lists — https://iplists.firehol.org/
+Blacklists — Project Honey Pot — https://www.projecthoneypot.org/list_of_ips.php
+Neighbor Domains — IP Fingerprints - Reverse IP Lookup — https://ipfingerprints.com/reverseip.php
+Neighbor Domains — Bing IP Search [D] — https://www.bing.com/search?q=ip%3A8.8.8.8
+Neighbor Domains — TCP/IP Utils - Domain Neighbors — https://dnslytics.com/
+Neighbor Domains — MyIPNeighbors — https://www.my-ip-neighbors.com/
+Protected by Cloud Services — CloudFlare Watch — https://www.crimeflare.com/
+Protected by Cloud Services — CloudFail [T] — https://github.com/m0rtem/CloudFail
+Wireless Network Info — WiGLE: Wireless Network Mapping [R] — https://wigle.net/
+Wireless Network Info — OpenCellid: Database of Cell Towers — https://opencellid.org/
+Network Analysis Tools — Wireshark [T] — https://www.wireshark.org/download.html
+Network Analysis Tools — NetworkMiner [T] — https://www.netresec.com/?page=Networkminer
+Network Analysis Tools — Packet Total [R] — https://www.packettotal.com/
+Network Analysis Tools — checkip [T] — https://github.com/jreisinger/checkip
+IP Loggers — Ki.tc — https://ki.tc
+IP Loggers — Grabify — https://grabify.link
+IP Loggers — IP Logger — https://iplogger.com/
+
+# IMAGES / VIDEOS / DOCS
+Images > Search — Google Images — https://images.google.com/
+Images > Search — Bing Images — https://www.bing.com/images
+Images > Search — FaceCheck Facial Recognition Search [R] — https://facecheck.id/
+Images > Search — Surfface Face & People Search Engine [R] — https://surfface.com/
+Images > Search — PimEyes Face Search Engine [R] — https://pimeyes.com/en
+Images > Search — Yandex Images — https://yandex.com/images/
+Images > Search — Baidu Images — https://image.baidu.com/
+Images > Search — Twitter Image Search [M] — https://twitter.com/search?q=%3Csearchterm%3E&src=typd&vertical=default&f=images
+Images > Search — Imgur Search — https://imgur.com/search
+Images > Search — Photobucket — https://photobucket.com/
+Images > Search — 7Photos.net [R] — https://7photos.net/
+Images > Search — Current Location — https://current-location.com/
+Images > Search — Lenso.ai [R] — https://lenso.ai/
+Images > Search — CC Search — https://search.creativecommons.org/
+Images > Search — CamFind App — https://camfindapp.com/
+Images > Search — RevEye Reverse Image Search [T] — https://github.com/steven2358/reveye
+Images > Search — SmugMug Search — https://www.smugmug.com/
+Images > Search — ImageNet [T] — https://image-net.org/
+Images > Search — Places2 [T] — http://places2.csail.mit.edu/
+Images > Search — Image Identification Project — https://www.imageidentify.com/
+Images > Search — SauceNAO — https://saucenao.com/
+Images > Search — Picarta — https://picarta.ai/
+Images > Search — FaceSeek Face Search Engine — https://www.faceseek.online/
+Images > Instagram — Webstigram [M] — https://websta.me/search-engine-optimization/
+Images > Instagram — Instagram [R/M] — https://www.instagram.com/
+Images > Instagram — Mini Instagram [T] — https://mini-for-instagram.en.softonic.com/
+Images > Instagram — Imgrab [T] — https://www.imgrab.com/
+Images > Instagram — Tofo.me [M] — https://tofo.me/
+Images > Flickr — Flickr [M] — https://www.flickr.com/
+Images > Flickr — Flickr Map [M] — https://www.flickr.com/map/
+Images > Flickr — My Pics Map [M] — https://www.mypicsmap.com/
+Images > Flickr — idGettr — https://www.webfx.com/tools/idgettr/
+Images > Flickr — Flickr Hive Mind [M] — https://flickrhivemind.net/
+Images > Metadata — ExifEditor — https://exifeditor.io
+Images > Metadata — ExifTool [T] — https://exiftool.org/
+Images > Metadata — ExifViewer — https://www.exifviewer.org/
+Images > Metadata — FOCA [T] — https://github.com/ElevenPaths/FOCA
+Images > Metadata — GeoSetter [T] — https://geosetter.de/en/main-en/
+Images > Metadata — Jeffrey's Exif Viewer — https://regex.info/blog/ (unverified)
+Images > Metadata — JPEGsnoop [T] — https://www.impulseadventure.com/photo/jpeg-snoop.html
+Images > Metadata — Metapicz — https://metapicz.com/#landing
+Images > Metadata — Search by Exif — https://exif.osint-tool.com
+Images > Metadata — xeuledoc - Fetch metadata about any public Google document [T] — https://github.com/Malfrats/xeuledoc
+Images > Metadata — Exiv2 [T] — https://exiv2.org/
+Images > Metadata — MediaInfo [T] — https://mediaarea.net/en/MediaInfo
+Images > Metadata — Apache Tika [T] — https://tika.apache.org/
+Images > Metadata — oletools [T] — https://github.com/decalage2/oletools
+Images > Metadata — Hachoir [T] — https://hachoir.readthedocs.io/ (unverified)
+Images > Metadata — C2PA Verify — https://c2paviewer.com/ (unverified)
+Images > Metadata — Metadata2Go — https://www.metadata2go.com/ (unverified)
+Images > Forensics — Ghiro [T] — https://getghiro.org/ (unverified)
+Images > Forensics — Forensically — https://29a.ch/photo-forensics/ (unverified)
+Images > OCR — i2OCR — https://www.i2ocr.com/ (unverified)
+Images > OCR — New OCR — https://www.newocr.com/ (unverified)
+Images > OCR — Online OCR — https://www.onlineocr.net/ (unverified)
+Images > Tools — Creepy [T] — https://github.com/ilektrojohn/creepy (unverified)
+Videos > Search — Google Videos — https://www.google.com/videohp (unverified)
+Videos > Search — Bing Videos — https://www.bing.com/videos (unverified)
+Videos > Search — Internet Archive Videos — https://archive.org/details/movies (unverified)
+Videos > Search — Vines [D] — https://www.google.com/search?q=site:vine.co+%3Csearchterm%3E (unverified)
+Videos > Search — Dogpile — https://www.dogpile.com/ (unverified)
+Videos > Search — Geo Search Tool — https://youtube.github.io/geo-search-tool/ (unverified)
+Videos > Search — blinkx Video Search — https://blinkx.com/ (unverified)
+Videos > Search — Facebook Live Map — https://facebook.com/live (unverified)
+Videos > Search — LiveLeak [D] — https://www.liveleak.com/ (unverified)
+Videos > Search — Metatube — https://github.com/JVT038/MetaTube (unverified)
+Videos > Search — Yahoo Video Search — https://video.search.yahoo.com/ (unverified)
+Videos > Search — Search YouTube by Location — https://mattw.io/youtube-geofind/ (unverified)
+Videos > Analyze / Record — Print YouTube StoryBoard Instructions — https://www.labnol.org/internet/print-youtube-video/28217 (unverified)
+Videos > Analyze / Record — Frame by Frame for YouTube [T] — https://chrome.google.com/webstore/detail/frame-by-frame-for-youtub/elkadbdicdciddfkdpmaolomehalghio?hl=en-GB (unverified)
+Videos > Analyze / Record — TubeChop — https://tubechop.com/ (unverified)
+Videos > Analyze / Record — YouTube Data Tools — https://tools.digitalmethods.net/netvizz/youtube/ (unverified)
+Videos > Analyze / Record — Hooktube — https://hooktube.com/ (unverified)
+Videos > Analyze / Record — yasiv-youtube — https://yasiv.com/youtube/ (unverified)
+Webcams — SeeAllTheThings — https://github.com/baywolf88/seeallthethings (unverified)
+Webcams — Insecam — https://insecam.org/ (unverified)
+Webcams — EarthCam — https://www.earthcam.com/ (unverified)
+Documents > Search > Common GoogleDorks — GoogleDocs [D] — https://www.google.com/?q=site:docs.google.com+%3Csearchterm%3E (unverified)
+Documents > Search > Common GoogleDorks — GoogleDrive [D] — https://www.google.com/?q=site:drive.google.com+%3Csearchterm%3E (unverified)
+Documents > Search > Common GoogleDorks — Dropbox [D] — https://www.google.com/?q=site:dl.dropbox.com+%3Csearchterm%3E (unverified)
+Documents > Search > Common GoogleDorks — Amazon AWS [D] — https://www.google.com/search?q=site:s3.amazonaws.com+%3Csearchterm%3E (unverified)
+Documents > Search > Common GoogleDorks — OneDrive [D] — https://www.google.com/search?safe=off&q=site:onedrive.live.com+%3Csearchterm%3E (unverified)
+Documents > Search > Common GoogleDorks — Cryptome [D] — https://www.google.com/search?q=site:cryptome.org+%3Csearchterm%3E (unverified)
+Documents > Search — Scribd — https://www.scribd.com/ (unverified)
+Documents > Search — WikiLeaks Search — https://search.wikileaks.org/advanced (unverified)
+Documents > Search — RECAP Court Doc Repo — https://archive.recapthelaw.org/ (unverified)
+Documents > Search — filessoo.com — https://filessoo.com/ (unverified)
+Documents > Search — Leaked Cables — https://search.wikileaks.org/plusd/ (unverified)
+Documents > Paste Sites — Pastebin OSINT Harvester [T] — https://github.com/needmorecowbell/sniff-paste (unverified)
+Fonts — What The Font — https://www.myfonts.com/pages/whatthefont (unverified)
+Fonts — Font Squirrel — https://www.fontsquirrel.com/matcherator (unverified)
+Fonts — IdentiFont — https://www.identifont.com/index.html (unverified)
+Fonts — What Font Is [M] — https://www.whatfontis.com/ (unverified)
+
+# SOCIAL NETWORKS
+Facebook > Search — FB Email Search [M] — https://www.facebook.com/public?query=email@gmail.com&nomc=0
+Facebook > Search — Recover FB Account — https://www.facebook.com/login/identify?ctx=recover
+Facebook > Search — Facebook Photos by ID [M] — https://www.facebook.com/photo.php?fbid=PHOTO-ID-HERE
+Facebook > Search — FB Lookup ID — https://lookup-id.com/
+Facebook > Search — FB Identify (Requires Logout) — https://www.facebook.com/login/identify
+Fediverse/Mastodon — Fedifinder [R] — https://fedifinder.glitch.me/ (unverified)
+Fediverse/Mastodon — Fediverse Observer — https://fediverse.observer/
+Fediverse/Mastodon — Fediverse_OSINT [T] — https://github.com/cyfinoid/fediverse_osint
+Fediverse/Mastodon — Masto [T] — https://github.com/C3n7ral051nt4g3ncy/Masto
+Instagram — Inflact Instagram Viewer (Anonymous) — https://inflact.com/instagram-viewer/profile/
+Instagram — Osintgram [T/R] — https://github.com/Datalux/Osintgram
+Twitter > Search — Twitter Advanced Search [M] — https://twitter.com/search-advanced
+Twitter > Search — Twitter Location Search [M] — https://twitter.com/search?q=geocode%3A36.1143855%2C-115.1727518%2C1km&src=typd
+Twitter > Search — Twitter Date Search [M] — https://twitter.com/search?q=SearchTerm%20since:2016-03-01%20until:2016-03-02
+Twitter > Search — Followerwonk [R] — https://followerwonk.com/
+Twitter > Search — Twopcharts — https://twopcharts.com/
+Twitter > Search — TweeterID — https://tweeterid.com/
+Twitter > Analytics > Profile — Tweepsect — https://tweepsect.com/ (unverified)
+Twitter > Analytics > Profile — Twitonomy [R] — https://www.twitonomy.com/
+Twitter > Analytics > Profile — Foller.me Analytics — https://foller.me/
+Twitter > Analytics > Profile — X0rz Tweets_analyzer [T/R] — https://github.com/x0rz/tweets_analyzer
+Twitter > Analytics > Hashtag — RiteTag [R] — https://ritetag.com/
+Twitter > Analytics > Hashtag — TAGSExplorer — https://tags.hawksey.info/tagsexplorer/
+Twitter > Analytics — Tweet Metadata — https://www.wsj.com/public/resources/documents/TweetMetadata.pdf
+Twitter > Analytics — Birdwatcher [T/R] — https://github.com/michenriksen/birdwatcher
+Twitter > Analytics — Tinfoleak Web [R] — https://tinfoleak.com/
+Twitter > Analytics — Tinfoleak.py [T] — https://github.com/vaguileradiaz/tinfoleak
+Twitter > Analytics — DMI-TCAT [T/R] — https://github.com/digitalmethodsinitiative/dmi-tcat
+Twitter > Analytics — Twint [T] — https://github.com/twintproject/twint
+Twitter > Location / Mapping — GeoSocial Footprint [R] — https://geosocialfootprint.com/
+Twitter > Location / Mapping — One Million Tweet Map — https://onemilliontweetmap.com/
+Twitter > Location / Mapping — Creepy [T] — https://github.com/ilektrojohn/creepy
+Twitter > Location / Mapping — Fedica [R] — https://fedica.com/
+Twitter > Archive / Deleted Tweets — All My Tweets — https://www.allmytweets.net/
+Twitter > Archive / Deleted Tweets — Spoonbill [R] — https://spoonbill.io/
+Twitter > Archive / Deleted Tweets — TweetVacuum [T/R] — https://github.com/UberKitten/TweetVacuum
+Reddit — Reddit Metis — https://redditmetis.com/
+Reddit — Reddit Archive — https://www.redditarchive.com/
+Reddit — subreddits — https://subreddits.org/
+Reddit — Reddit Comment History — https://roadtolarissa.com/javascript/reddit-comment-visualizer/
+LinkedIn — LinkedInt - LinkedIn Recon Tool [T/R] — https://github.com/vysecurity/LinkedInt
+LinkedIn — ScrapedIn [T/R] — https://github.com/dchrastil/ScrapedIn
+LinkedIn — InSpy [T/R] — https://github.com/jobroche/InSpy
+LinkedIn — raven [T/R] — https://github.com/0x09AL/raven
+TikTok — TikTok [M] — https://www.tiktok.com/@username
+TikTok — TikTok-OSINT [T] — https://github.com/Omicron166/TikTok-OSINT
+TikTok — Unfurl [T] — https://github.com/obsidianforensics/unfurl
+TikTok — yt-dlp [T] — https://github.com/yt-dlp/yt-dlp
+Bluesky — Treeverse [T] — https://treeverse.app/
+Threads — Bellingcat Meta Content Library [R] — https://bellingcat.gitbook.io/toolkit/more/all-tools/meta-content-library
+Threads — Threads Dashboard [R] — https://www.threadsdashboard.com/
+Threads — Threads-Scraper [T] — https://github.com/Zeeshanahmad4/Threads-Scraper
+Threads — ThreadsRecon [T] — https://github.com/offseq/threadsrecon
+Steam, Discord & Gaming Networks — SteamOSINT [T] — https://github.com/Frontline-Femmes/Steam-OSINT
+Other Social Networks — Ask FM [M] — https://ask.fm/%3Cusername%3E
+Other Social Networks — Myspace — https://myspace.com/
+Other Social Networks — Tumblr — https://www.tumblr.com/tagged/search
+Other Social Networks — BlackPlanet.com - Member Find — https://www.blackplanet.com/user_search/index.html
+Other Social Networks — MiGente (Latino) [R] — https://migente.com/wp-login.php?redirect_to=https%3A%2F%2Fmigente.com%2Fuser_search%2Findex.html&bp-auth=1&action=bpnoaccess
+Other Social Networks — Asian Avenue — https://blackplanet.com/ (unverified)
+Other Social Networks — Orkut (Brazil) — https://orkut.google.com/ (unverified)
+Other Social Networks — Odnoklassniki — https://ok.ru/
+Other Social Networks — VK — https://vk.com/
+Other Social Networks — Delicious — https://del.icio.us/
+Other Social Networks — TheHoodUp (NSFW) — https://thehoodup.com/board/
+Other Social Networks — Share Secret Feedback [M] — https://secreto.site/en/%3Cuser_id%3E
+Search — Social Searcher — https://www.social-searcher.com/
+Search — Google Social Search [D] — https://www.social-searcher.com/google-social-search/
+Search — Talkwalker Social Media Search [R] — https://www.talkwalker.com/social-media-analytics-search
+Search — PinGroupie — https://pingroupie.com/
+
+# INSTANT MESSAGING
+Chat Archive Analysis — Comms Analyzer Toolbox [T] — https://github.com/bitsofinfo/comms-analyzer-toolbox
+Discord — Disboard — https://disboard.org/
+Discord — DiscordOSINT [T] — https://github.com/husseinmuhaisen/DiscordOSINT
+Resources — Awesome OSINT — https://github.com/jivoi/awesome-osint
+Signal / Phone Lookup — OSINT Industries [R] — https://www.osint.industries/
+Slack — SlackPirate [T/R] — https://github.com/emtunc/SlackPirate
+Slack — slack-intelbot [T/R] — https://github.com/pun1sh3r/slack-intelbot
+Slack — slack-web-scraper [T/R] — https://github.com/iulspop/slack-web-scraper
+Telegram — Google CSE for Telegram links [M] — https://cse.google.com/cse?cx=006368593537057042503:efxu7xprihg
+Telegram — Telegago [T] — https://tools.osintnewsletter.com/osint-tools/telegago-telegram
+Telegram — Telegram-OSINT [T] — https://github.com/The-Osint-Toolbox/Telegram-OSINT
+Telegram — TGStat [R] — https://tgstat.com/
+Telegram — Tosint [T] — https://github.com/drego85/tosint
+WeChat / LINE — Sogou WeChat Search — https://weixin.sogou.com/
+WeChat / LINE — WechatSogou [T] — https://github.com/Chowency/WechatSogou
+WeChat / LINE — wechat-dump [T] — https://github.com/ppwwyyxx/wechat-dump
+WeChat / LINE — wechat-text-backup [T] — https://github.com/zhaofeng-shu33/wechat-text-backup
+WeChat / LINE — linelog2py [T] — https://github.com/jyu0414/linelog2py
+WeChat / LINE — line-message-analyzer [T] — https://github.com/chonyy/line-message-analyzer
+WhatsApp — Email2WhatsApp [T] — https://github.com/dsonbaker/email2whatsapp
+WhatsApp — WhatsApp-OSINT [T/R] — https://github.com/kinghacker0/WhatsApp-OSINT
+
+# PEOPLE SEARCH ENGINES
+General People Search — InfoFlow Public People Search In Chilean [R] — https://infoflow.cloud/
+General People Search — ThatsThem — https://thatsthem.com/name-address-search
+General People Search — Melissa Data - People Finder [R] — https://www.melissa.com/
+General People Search — PeekYou — https://www.peekyou.com/
+General People Search — Webmii — https://webmii.com/
+General People Search — Snitch.name — https://snitch.name/
+General People Search — Lullar — https://com.lullar.com/
+General People Search — Yasni — https://www.yasni.com/
+General People Search — findmypast.com [R] — https://www.findmypast.com/discover
+General People Search — IDCrawl — https://www.idcrawl.com/
+General People Search — FamilySearch.org — https://familysearch.org/search/
+General People Search — Ancestry.com — https://www.ancestry.com/search/
+General People Search — AnyWho — https://www.anywho.com/whitepages
+General People Search — Addresses.com — https://www.addresses.com/
+General People Search — FaceCheckID — https://facecheck.id/
+General People Search — usa-people-search.com [R] — https://www.usa-people-search.com/
+Registries — The Knot — https://www.theknot.com/registry/couplesearch
+Registries — Registry Finder — https://registryfinder.com:443/
+Registries — My Registry — https://www.myregistry.com/
+Registries — Amazon Registry Search [M] — https://www.amazon.com/registries
+Registries — The Bump — https://registry.thebump.com/babyregistrysearch
+Dating — AYI.com [R] — https://www.ayichat.com
+Dating — Plenty Of Fish.com [R] — https://www.pof.com/
+Dating — eHarmony [R] — https://www.eharmony.com/
+Dating — Farmers Only [R] — https://www.farmersonly.com/
+Dating — Tinder [R] — https://tinder.com/
+Dating — Bumble [R] — https://bumble.com/
+Dating — Tantan [R] — https://int.tantanapp.com
+Dating — AdultFriendFinder [R] — https://www.adultfriendfinder.com
+Dating — BeautifulPeople.com [R] — https://www.beautifulpeople.com/en-US
+Dating — Badoo [R] — https://badoo.com
+Dating — Spark.com [R] — https://spark.com
+Dating — Meetup [R] — https://www.meetup.com/
+Dating — Hinge [R] — https://hinge.co/en-gb
+
+# TELEPHONE NUMBERS
+Voicemail — Slydial [R] — https://www.slydial.com/
+International — Numbering Plans — https://www.numberingplans.com/?page=analysis&sub=phonenr
+International — Numberway — https://www.numberway.com/
+Telephone Numbers — WhoCalld [R] — https://whocalld.com/ (unverified)
+Telephone Numbers — Twilio Lookup [R] — https://www.twilio.com/lookup
+Telephone Numbers — Fone Finder [R] — https://www.fonefinder.net/ (unverified)
+Telephone Numbers — True Caller [R] — https://www.truecaller.com/
+Telephone Numbers — Reverse Genie — https://www.reversegenie.com/phone.php
+Telephone Numbers — SpyDialer [R] — https://www.spydialer.com:443/default.aspx
+Telephone Numbers — Phone Validator — https://www.phonevalidator.com/index.aspx
+Telephone Numbers — Phonerator — https://www.martinvigo.com/phonerator/
+Telephone Numbers — Mr. Number [R/M] — https://www.hiya.com/products/apps/hiya-spam-blocker (unverified)
+Telephone Numbers — Next Caller [R] — https://nextcaller.com/
+Telephone Numbers — Data24-7 [R] — https://www.data24-7.com/signup.php
+Telephone Numbers — HLR Lookup Portal [R] — https://www.hlr-lookups.com/en/start
+Telephone Numbers — OpenCNAM API [R] — https://api.opencnam.com/v2/phone/+19073372323
+Telephone Numbers — Numspy [T] — https://bhattsameer.github.io/numspy/
+Telephone Numbers — Numspy-Api [R] — https://numspy.pythonanywhere.com/
+Telephone Numbers — Family Tree Now [M] — https://www.familytreenow.com/search/genealogy/results?phoneno=(555)555-5555
+Telephone Numbers — Whitepages Reverse Phone — https://www.whitepages.com/reverse-phone
+Telephone Numbers — Hiya [R] — https://www.hiya.com/
+
+# PUBLIC RECORDS
+Property Records — Melissa Data - Property Viewer [R] — https://melissa-data.com
+Property Records — Regrid (US Only) — https://regrid.com
+Property Records — Emporis — https://www.emporis.com/ (unverified)
+Property Records — Neighbor Report — https://neighbor.report/
+Property Records — Redfin — https://redfin.com
+Court / Criminal Records — Nationwide County Court Records [M] — https://www.publicrecordcenter.com/onlinecourtrecords.htm
+Court / Criminal Records — World Legal Information Institute — https://worldlii.org
+Court / Criminal Records — Most Wanted Criminal Pages — https://www.fbi.gov/wanted/fugitives
+Court / Criminal Records — Black Book Online - Criminal Search — https://www.blackbookonline.info/
+Court / Criminal Records — CrimeReports.com — https://crimereports.com
+Court / Criminal Records — Familywatchdog - Sex Offender Search — https://www.familywatchdog.us/
+Court / Criminal Records — The Inmate Locator — https://www.bop.gov/inmateloc/
+Court / Criminal Records — National Sex Offender Search — https://www.nsopw.gov/
+Court / Criminal Records — Mugshots.com — https://mugshots.com
+Court / Criminal Records — judyrecords — https://www.judyrecords.com/
+Court / Criminal Records — Caselaw Access Project — https://case.law/
+Court / Criminal Records — CourtListener — https://courtlistener.com/
+Court / Criminal Records — Docket Alarm — https://docketalarm.com
+Court / Criminal Records — Google Scholar Case Law — https://scholar.google.com/scholar_courts
+Court / Criminal Records — PACER [R] — https://pacer.uscourts.gov/
+Court / Criminal Records — Free Law RECAP Archive — https://www.courtlistener.com/recap/
+Court / Criminal Records — UniCourt — https://unicourt.com/
+Court / Criminal Records — Federal Inmate Locator — https://www.bop.gov/inmateloc/
+Court / Criminal Records — Epstein Exposed — https://epsteinexposed.com/
+Government Records — NC Salary DB — https://www.ncosc.gov/public-information/state-employee-salary-database
+Government Records — Gov Data Canada — https://open.canada.ca/data/en/dataset
+Government Records — CA Salary DB — https://transparentcalifornia.com/
+Financial / Tax Resources — BIN Base — https://www.buybindatabase.binbase.com/
+Financial / Tax Resources — VAT Research — https://www.belastingdienst.nl/
+Financial / Tax Resources — NETR Online [M] — https://publicrecords.netronline.com/
+Birth Records — Sorted by Birth Date — https://www.bop.gov/inmateloc/
+Death Records — Death Check [M] — https://www.deathindexes.com/
+Death Records — Find A Grave — https://www.findagrave.com/
+Death Records — GraveInfo — https://billiongraves.com/
+US County Data — NACo County Explorer — https://explorer.naco.org/
+US Voter Records — Voter Registration Data [M] — https://www.sos.secretary.state.gov/
+Patent Records — US Patent Office Search — https://www.uspto.gov/patents/search
+Patent Records — Google Patent Search — https://patents.google.com/
+US Political Records — Political MoneyLine — https://www.opensecrets.org/
+US Political Records — MelissaData - Campaign Contributions [R] — https://melissa-data.com
+US Political Records — Influence Explorer — https://influenceexplorer.com/
+US Political Records — US Federal Election Commission — https://fec.gov/data
+US Political Records — Every Politician — https://everypolitician.org/
+Public Records — Public Records? [M] — https://www.brbpublications.com/
+Public Records — The World Bank Open Data Catalog — https://datacatalog.worldbank.org/
+Public Records — BRB Public Records — https://www.brbpublications.com/
+Public Records — GOVDATA - Das Datenportal für Deutschland (German) — https://www.govdata.de/
+Public Records — Open-Data-Portal München (German) — https://opendata.muenchen.de/
+Public Records — Searchable FCC ID Database — https://www.fcc.gov/oet/ea/fccid
+
+# COMPLIANCE & RISK INTELLIGENCE
+Sanctions Screening — OpenSanctions — https://www.opensanctions.org/
+Sanctions Screening — OFAC Sanctions List Search — https://sanctionssearch.ofac.treas.gov/
+Sanctions Screening — EU Sanctions Tool [D] — https://sanctions-tool.ec.europa.eu
+Sanctions Screening — dilisense [R] — https://dilisense.com/en
+KYC / AML Tools — NameScan — https://namescan.io
+KYC / AML Tools — OpenScreening — https://resources.linkurious.com/openscreening
+KYC / AML Tools — Companies House [R] — https://find-and-update.company-information.service.gov.uk/
+Beneficial Ownership Lookup — OpenOwnership — https://www.openownership.org/en/
+Beneficial Ownership Lookup — ICIJ Offshore Leaks Database — https://offshoreleaks.icij.org/
+Beneficial Ownership Lookup — OCCRP Aleph [R] — https://aleph.occrp.org/
+Sanctions / PEP — PepChecker [R] — https://pepchecker.com
+Sanctions / PEP — Ukraine PEP Register [D] — https://pep.org.ua/en/ (unverified)
+Sanctions / PEP — EveryPolitician — https://everypolitician.org/
+
+# BUSINESS RECORDS
+Annual Reports — AnnualReports.com — https://www.annualreports.com/
+Annual Reports — Public Register Online — https://www.annualreportservice.com/
+Annual Reports — Public Register's Annual Report Service [M] — https://www.prars.com/search/alpha/A
+Annual Reports — International Registries — https://www.gov.uk/government/publications/overseas-registries/overseas-registries
+General Info & News — Commercial Register - Worldwide — https://www.sg.ch/recht/handelsregister-notariate.html
+General Info & News — SEC.gov - EDGAR [D] — https://www.sec.gov/submit-filings
+General Info & News — International White Pages — https://www.wayp.com/
+General Info & News — UK Companies — https://www.gov.uk/get-information-about-a-company
+General Info & News — Global EDGE Resource Directory — https://globaledge.msu.edu/global-resources
+General Info & News — Google Finance — https://www.google.com/finance/
+Company Profiles — OpenCorporates — https://opencorporates.com/
+Company Profiles — AIHIT [R] — https://www.aihitdata.com/
+Company Profiles — Plonked — https://www.plonked.com/ (unverified)
+Company Profiles — Buzzfile — https://www.buzzfile.com/Home/Basic
+Company Profiles — LittleSis — https://littlesis.org/
+Company Profiles — Rusprofile — https://www.rusprofile.ru/
+Company Profiles — Companies House — https://beta.companieshouse.gov.uk/
+Company Profiles — Company Data Rex (EU) — https://www.cdrex.com/
+Company Profiles — Europages — https://www.europages.co.uk:443/
+Company Profiles — Owler [R] — https://www.owler.com/corp
+Company Profiles — Vault — https://vault.com/
+Company Profiles — Companies In The UK — https://www.companiesintheuk.co.uk/
+Company Profiles — UK Data — https://ukdata.com/
+Company Profiles — Orbis Directory [R] — https://orbisdirectory.bvdinfo.com/version-2016121/OrbisDirectory/Companies
+Company Profiles — Crunchbase [R] — https://www.crunchbase.com/#/home/index
+Employee Profiles & Resumes — RecruitEm [D] — https://recruitin.net/
+Employee Profiles & Resumes — LinkedIn [R/D] — https://www.linkedin.com/
+Employee Profiles & Resumes — Jobster — https://jobster.com/ (unverified)
+Employee Profiles & Resumes — XING [R] — https://www.xing.com/
+Employee Profiles & Resumes — CVGadget [D] — https://cvgadget.com/ (unverified)
+Additional Resources — RBA - Business Information Resources — https://www.rba.co.uk/sources/
+Additional Resources — VAT Number Validation — https://ec.europa.eu/taxation_customs/vies/?locale=en
+
+# TRANSPORTATION
+Vehicle Records — MyAccident - traffic accident map — https://myaccident.org/
+Vehicle Records — NHTSA Vehicle API — https://vpic.nhtsa.dot.gov/api/
+Vehicle Records — FindByPlate — https://findbyplate.com/
+Vehicle Records — carVertical VIN Decoder [R] — https://www.carvertical.com/vin-decoder
+Vehicle Records — autoDNA VIN Lookup [R] — https://www.autodna.com/
+Vehicle Records — VinDecodr — https://vindecodr.com/
+Vehicle Records — AutoRef (EU) [R] — https://www.autoref.eu/en
+Vehicle Records — Carnet.ai — https://carnet.ai/
+Vehicle Records — Finnik (NL) [R] — https://finnik.nl/en
+Air Traffic Records — Flightradar24.com — https://www.flightradar24.com/
+Air Traffic Records — World Aeronautical Database — https://worldaerodata.com/
+Air Traffic Records — ADS-B Exchange — https://www.adsbexchange.com/
+Air Traffic Records — ADS-B.NL — https://www.ads-b.nl/index.php?pageno=9999
+Air Traffic Records — OpenAIP World Aeronautical Database — https://www.openaip.net/
+Marine Records — Vessel Tracker — https://www.vesseltracker.com/
+Marine Records — Ship AIS — https://shipais.uk/
+Marine Records — OpenSeaMap - The free nautical chart — https://www.openseamap.org
+Marine Records — Vessel Finder — https://www.vesselfinder.com/
+Marine Records — Global Fishing Watch — https://globalfishingwatch.org
+Railway Records — Deutsche Bahn Open-Data-Portal (German) — https://data.deutschebahn.com/opendata
+Railway Records — OpenRailwayMap — https://www.openrailwaymap.org/
+Transportation — Satellite Tracking — https://www.n2yo.com/
+Transportation — Track-Trace — https://www.track-trace.com/
+
+# GEOLOCATION TOOLS / MAPS
+Geolocation Tools — Astrometry — https://nova.astrometry.net/
+Geolocation Tools — SunCalc [M] — https://suncalc.net/
+Geolocation Tools — SunCalc [M] — https://suncalc.org/
+Geolocation Tools — GeoSpy [R] — https://geospy.ai/
+Coordinates — GPSVisualizer [M] — https://www.gpsvisualizer.com/geocode
+Coordinates — Military Grid Reference System Coordinates [M] — https://dominoc925-pages.appspot.com/mapplets/cs_mgrs.html
+Coordinates — Batch Geocoding [R] — https://www.doogal.co.uk/BatchGeocoding
+Coordinates — Batch Reverse Geocoding [R] — https://www.doogal.co.uk/BatchReverseGeocoding
+Map Reporting Tools — Hyperlapse [T] — https://github.com/TeehanLax/Hyperlapse.js
+Map Reporting Tools — Google Maps Streetview Player [M] — https://brianfolts.com/driver/
+Map Reporting Tools — ScribbleMaps [R/M] — https://www.scribblemaps.com/
+Map Reporting Tools — Beholder [M] — https://beholder.infragard.io/
+Map Reporting Tools — LiveUaMap [M] — https://liveuamap.com/
+Mobile Coverage — OpenSignal — https://www.opensignal.com/
+Mobile Coverage — AntennaSearch — https://www.antennasearch.com/
+Mobile Coverage — OpenCelliD [R] — https://opencellid.org/
+Mobile Coverage — beaconDB — https://beacondb.net/
+Geolocation Tools / Maps — Google Maps — https://www.google.com/maps/
+Geolocation Tools / Maps — Bing Maps — https://www.bing.com/maps
+Geolocation Tools / Maps — HERE Maps — https://maps.here.com/
+Geolocation Tools / Maps — Dual Maps [M] — https://data.mashedworld.com/dualmaps/map.htm
+Geolocation Tools / Maps — Instant Google Street View [M] — https://www.instantstreetview.com/
+Geolocation Tools / Maps — Wikimapia — https://wikimapia.org/#lang=en&lat=40.078071&lon=-100.458984&z=5&m=b
+Geolocation Tools / Maps — OpenStreetMap — https://www.openstreetmap.org/
+Geolocation Tools / Maps — Flash Earth — https://zoom.earth/
+Geolocation Tools / Maps — Historic Aerials [R] — https://www.historicaerials.com/?javascript=&
+Geolocation Tools / Maps — Google Maps Update Alerts [R] — https://followyourworld.appspot.com/
+Geolocation Tools / Maps — Google Earth Overlays [M] — https://www.mgmaps.com/kml/
+Geolocation Tools / Maps — Yandex.Maps — https://yandex.com/maps/
+Geolocation Tools / Maps — Google Earth — https://earth.google.com/web/
+Geolocation Tools / Maps — Baidu Maps — https://map.baidu.com/
+Geolocation Tools / Maps — Corona [R] — https://corona.cast.uark.edu/
+Geolocation Tools / Maps — Naver (Korean) — https://map.naver.com/p/
+Geolocation Tools / Maps — Overpass Turbo [M] — https://overpass-turbo.eu/
+Geolocation Tools / Maps — EarthExplorer [R] — https://earthexplorer.usgs.gov/
+Geolocation Tools / Maps — OpenStreetCam — https://kartaview.org/
+Geolocation Tools / Maps — Travel by Drone — https://travelbydrone.com/
+Geolocation Tools / Maps — Hivemapper [R] — https://hivemapper.com/
+Geolocation Tools / Maps — LandsatLook Viewer — https://landsatlook.usgs.gov/
+Geolocation Tools / Maps — NEXRAD Data Inventory Search [R] — https://www.ncdc.noaa.gov/nexradinv/
+Geolocation Tools / Maps — MapQuest — https://www.mapquest.com/
+Geolocation Tools / Maps — OpenInfrastructureMap — https://openinframap.org/
+Geolocation Tools / Maps — Hiking & Biking Map — https://hikebikemap.org/
+Geolocation Tools / Maps — US Nav Guide Zip Code Data — https://www.usnaviguide.com/
+Geolocation Tools / Maps — Wayback Imagery — https://livingatlas.arcgis.com/wayback/
+Geolocation Tools / Maps — SkyFi.com - Satellite Open Data [R] — https://app.skyfi.com/explore/open
+
+# SEARCH ENGINES
+General Search — Google [D/M] — https://www.google.com/?gws_rd=ssl
+General Search — Bing [D/M] — https://www.bing.com/
+General Search — DuckDuckGo [M] — https://duckduckgo.com/
+General Search — Yahoo Advanced Web Search [D/M] — https://search.yahoo.com/web/advanced
+General Search — StartPage [D/M] — https://www.startpage.com/
+General Search — Yandex [D/M] — https://yandex.com/
+General Search — Baidu [D/M] — https://www.baidu.com/
+General Search — Google Advanced Search [D/M] — https://www.google.com/advanced_search
+General Search — iZito — https://www.izito.com/
+General Search — Advangle [D/M] — https://advangle.com/
+General Search — Instya — https://www.instya.com/
+General Search — Hulbee — https://hulbee.com/de
+General Search — Mojeek [D/M] — https://mojeek.com/
+General Search — Swisscows — https://swisscows.com/en
+General Search — Brave [M] — https://search.brave.com/
+General Search — Stract [T/D/M] — https://stract.com/
+Meta Search — iSEEK — https://iseek.com/iseek/home.page (unverified)
+Meta Search — eTools.ch — https://www.etools.ch/
+Code Search — PublicWWW — https://publicwww.com/
+Code Search — Searchcode — https://searchcode.com/
+Code Search — NerdyData [R] — https://www.nerdydata.com/reports/new
+Code Search — Gitrob [T] — https://github.com/michenriksen/gitrob
+Code Search — Github-Dorks [T/D] — https://github.com/techgaun/github-dorks
+Code Search — GitLeaks [T] — https://github.com/gitleaks/gitleaks
+FTP Search — GlobalFile [M] — https://globalfilesearch.com/
+FTP Search — FTP Google Dork [D/M] — https://www.google.com/search?q=inurl%3Aftp+-inurl%3Ahttp+-inurl%3Ahttps+ftpsearchterm
+FTP Search — Napalm FTP — https://www.searchftps.net/
+Academic / Publication Search — PubPeer — https://pubpeer.com/
+Academic / Publication Search — Bielefeld Academic Search Engine — https://www.base-search.net/Search/Advanced
+Academic / Publication Search — Google Scholar — https://scholar.google.com/
+Academic / Publication Search — PubMed - National Center for Biotechnology Information — https://pubmed.ncbi.nlm.nih.gov/
+Academic / Publication Search — Open Library — https://openlibrary.org/
+Academic / Publication Search — JURN — https://www.jurn.org/
+Academic / Publication Search — UK National Archives — https://discovery.nationalarchives.gov.uk/
+Academic / Publication Search — OpenGrey EU Papers — https://opengrey.eu/
+Academic / Publication Search — US Gov Publishing Office - FDsys — https://www.gpo.gov/fdsys/
+Academic / Publication Search — OpenDOAR — https://www.opendoar.org/search.php
+Academic / Publication Search — Microsoft Academic — https://academic.microsoft.com/
+Academic / Publication Search — Science Direct — https://www.sciencedirect.com/
+Academic / Publication Search — Think Tank Search — https://guides.library.harvard.edu/hks/think_tank_search
+Academic / Publication Search — Library Databases — https://guides.uflib.ufl.edu/az.php
+Academic / Publication Search — Copyscape Plagiarism Checker — https://www.copyscape.com/
+Academic / Publication Search — Lazy Scholar [T] — https://lazyscholar.org/
+Academic / Publication Search — Open Access Scholarly Journals — https://www.pagepress.org/
+Academic / Publication Search — The Open Syllabus Project — https://www.opensyllabus.org/ (unverified)
+Academic / Publication Search — Science Publications — https://www.thescipub.com/ (unverified)
+Academic / Publication Search — arXiv.org — https://arxiv.org/ (unverified)
+News Search — Google News Search — https://news.google.com/news/advanced_news_search? (unverified)
+News Search — Flipboard — https://flipboard.com/ (unverified)
+News Search — YouGotTheNews — https://yougotthenews.com/ (unverified)
+News Search — NewspaperARCHIVE.com — https://newspaperarchive.com/ (unverified)
+News Search — PressReader.com — https://www.pressreader.com/ (unverified)
+News Search — Newspaper Map — https://newspapermap.com/ (unverified)
+News Search — NewsBrief — https://emm.newsbrief.eu/NewsBrief/clusteredition/en/latest.html (unverified)
+News Search — AllYouCanRead.com — https://www.allyoucanread.com/ (unverified)
+News Search — World News — https://wn.com/#/search (unverified)
+News Search — NewsNow.co.uk — https://www.newsnow.co.uk/h/ (unverified)
+News Search — Hubii — https://hubii.com/ (unverified)
+News Search — Inshorts — https://inshorts.com/en/read (unverified)
+News Search — NewsBot — https://getnewsbot.com/ (unverified)
+Other Search — Colossus International Engine List — https://www.searchenginecolossus.com/ (unverified)
+Other Search — Zenodo — https://zenodo.org/ (unverified)
+Other Search — EntityCube — https://entitycube.research.microsoft.com/ (unverified)
+Other Search — FindTheData A Research Engine — https://www.findthedata.com/ (unverified)
+Search Tools — wayparam — https://github.com/aleff-github/wayparam (unverified)
+Search Tools — SearchDiggity [T] — https://bishopfox.com/resources (unverified)
+Search Tools — Scanner-inurlbr [T] — https://github.com/googleinurl/SCANNER-INURLBR (unverified)
+Search Tools — Google Alerts — https://www.google.com/alerts (unverified)
+Search Tools — Google Custom Search Engine — https://cse.google.com/cse/ (unverified)
+Search Tools — pagodo - Passive Google Dork [T/D] — https://github.com/opsdisk/pagodo
+Search Tools — Google Trends [M] — https://trends.google.com/trends/
+Search Tools — dorksearch.com [D/M] — https://www.dorksearch.com/
+Search Tools — dorkgenerator.pages.dev [D/M] — https://dorkgenerator.pages.dev/
+Search Tools — dorksearch.netlify.app [D/M] — https://dorksearch.netlify.app/
+Search Engine Guides — Google Hacking Database [D] — https://www.exploit-db.com/google-hacking-database
+Search Engine Guides — Google Search Operators Guide — https://www.googleguide.com/advanced_operators_reference.html
+Search Engine Guides — Google Guide Cheat Sheet — https://www.googleguide.com/help/calculator.html
+
+# ONLINE COMMUNITIES
+Blog Search Engines — Live Journal Seek [M] — https://ljseek.com/
+Blog Search Engines — Blog Search Engine [M] — https://www.blogsearchengine.org/
+Discord Servers — Discord Bot List — https://discord.bots.gg/
+Discord Servers — ReconXplorer [T] — https://github.com/root7am/ReconXplorer
+Discord Servers — Top.gg — https://top.gg/
+Forum Search Engines — BoardReader [D/M] — https://boardreader.com/
+Forum Search Engines — Omgili [D/M] — https://webz.io/
+Forum Search Engines — Craigslist Forums [D/M] — https://forums.craigslist.org/
+Forum Search Engines — Delphi Forum Search [M] — https://www.delphiforums.com/
+Forum Search Engines — Google Groups Search [D/M] — https://groups.google.com/forum/#!overview
+IRC Search — Mibbit — https://search.mibbit.com/ (unverified)
+IRC Search — IRCP [T] — https://github.com/internet-relay-chat/IRCP
+IRC Search — ircsnapshot [T] — https://github.com/bwall/ircsnapshot
+IRC Search — netsplit.de [D/M] — https://netsplit.de/channels/search.php
+Reddit Communities — Arctic Shift — https://arctic-shift.photon-reddit.com/
+Reddit Communities — Cama's Reddit Search — https://camas.github.io/reddit-search/
+Reddit Communities — Reveddit [M] — https://www.reveddit.com/
+
+# ARCHIVES
+Web — Anna's Archive [R] — https://annas-archive.org/
+Web — Archive.is [M] — https://archive.is/
+Web — Browsershots — https://browsershots.org/ (unverified)
+Web — Cached Pages [M] — https://www.cachedpages.com/
+Web — Cached View [M] — https://cachedview.com/
+Web — Common Crawl [M] — https://commoncrawl.org/
+Web — Internet Archive: Wayback Machine [M] — https://web.archive.org/
+Web — PDF My URL [M] — https://pdfmyurl.com/
+Web — Screenshots.com [R/M] — https://www.screenshots.com/
+Web — Wayback Machine Chrome Extension [T] — https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak
+Web — Textfiles.com — https://textfiles.com/
+Web — UK Web Archive [M] — https://www.webarchive.org.uk/ukwa/
+Web — Waybackpack [T] — https://github.com/jsvine/waybackpack
+Web — Web Archive-RU [M] — https://web-arhive.ru/
+Web — WebCite [M] — https://www.webcitation.org:443/query
+Data Leaks — Cryptome — https://cryptome.org/
+Data Leaks — Databases.Today [R/M] — https://databases.today/
+Data Leaks — WikiLeaks [M] — https://wikileaks.org/
+Public Datasets — Labeled Faces in the Wild DB — https://vis-www.cs.umass.edu/lfw/
+Public Datasets — Stanford Large Network Dataset Collection [M] — https://snap.stanford.edu/data/#amazon
+Public Datasets — UCI Spambase Data Set [M] — https://archive.ics.uci.edu/dataset/94/spambase
+Public Datasets — Visual Genome — https://visualgenome.org/
+Other Media — TV Closed Caption Search [M] — https://archive.org/details/tv
+
+# LANGUAGE TRANSLATION
+Text — Bing Translate — https://translator.bing.com/
+Text — Cambridge Dictionary — https://dictionary.cambridge.org/
+Text — DeepL Translator — https://www.deepl.com/en/translator
+Text — Free Translation — https://translation2.paralink.com/
+Text — Google Input Tools — https://www.google.com/inputtools/
+Text — Google Translate — https://translate.google.com/
+Text — Slang Dictionary & Translator — https://www.noslang.com/
+Text — Slangit - The Slang Dictionary — https://slang.net/
+Text — Urban Dictionary — https://www.urbandictionary.com/
+Text — Wiktionary — https://en.wiktionary.org/
+Text — Word Reference — https://www.wordreference.com/
+Pictures — i2OCR — https://www.i2ocr.com/
+Pictures — New OCR — https://www.newocr.com/
+Pictures — Online OCR (SodaPDF) — https://www.sodapdf.com/pdf-tools/ocr-pdf/
+Pictures — Online OCR (onlineocr.net) — https://www.onlineocr.net/
+Analysis — WhatTheFont — https://www.myfonts.com/pages/whatthefont/
+
+# MOBILE OSINT
+Android > Emulation Tools — Genymotion [T/R] — https://www.genymotion.com/
+Android > Emulation Tools — BlueStacks 2 [T] — https://www.bluestacks.com/
+Android > Emulation Tools — Nox App Player [T] — https://www.bignox.com/
+Android > Emulation Tools — Apk Online — https://apk.online/
+Android > Apps > Social Networking — Facebook [T/R/D] — https://www.facebook.com/
+Android > Apps > Social Networking — LinkedIn [T/R/D] — https://www.linkedin.com/
+Android > Apps > Social Networking — Twitter [T/R/D] — https://www.twitter.com/
+Android > Apps > Social Networking — Pinterest [T/R/D] — https://www.pinterest.com/
+Android > Apps > Instant Messaging — Signal Private Messenger [T/R] — https://signal.org/
+Android > Apps > Instant Messaging — Riot.im - Communicate, your way [T] — https://riot.im/
+Android > Apps > Instant Messaging — Telegram [T/R] — https://telegram.org/
+Android > Apps > Instant Messaging — Snapchat [T/R] — https://www.snapchat.com/
+Android > Apps > Instant Messaging — WhatsApp Messenger [T/R] — https://www.whatsapp.com/
+Android > Apps > Instant Messaging — Kik [T/R] — https://www.kik.com/
+Android > Apps > Instant Messaging — Yik Yak [T/R] — https://www.yikyak.com/
+Android > Apps > Instant Messaging — LINE [T/R] — https://line.me/
+Android > Apps > Pictures — Instagram [T/R/D] — https://www.instagram.com/
+Android > Apps > Pictures — Flickr [T/D] — https://www.flickr.com/
+Android > Apps > Streaming Video — Periscope [T/R] — https://www.periscope.tv/
+Android > Apps > Streaming Video — Meerkat [T/R] — https://meerkatapp.co/
+Android > Apps > Streaming Video — Vine [T] — https://vine.co/ (unverified)
+Android > Apps — Truecaller [T/R] — https://www.truecaller.com/
+App Analysis — APKLeaks [T] — https://github.com/dwisiswant0/apkleaks
+App Analysis — APKtool [T] — https://apktool.org/
+App Analysis — JADX [T] — https://github.com/skylot/jadx
+App Analysis — MobSF [T] — https://github.com/MobSF/Mobile-Security-Framework-MobSF
+Device Forensics — Autopsy [T] — https://www.autopsy.com/
+Device Forensics — Frida [T] — https://frida.re/
+iOS — Charles Proxy [T/R] — https://www.charlesproxy.com/
+iOS — Lynxio OSINT [R] — https://lynxio.io/
+iOS — OSINT Researcher [T] — https://apps.apple.com/us/app/osint-researcher/id6747302251
+
+# DARK WEB
+General Info — Reddit Deep Web — https://www.reddit.com/r/deepweb/
+General Info — Reddit Onions — https://www.reddit.com/r/onions/
+General Info — Reddit Darknet — https://www.reddit.com/r/darknet/
+Clients — Tor Download [T] — https://www.torproject.org/download/
+Clients — Freenet Project [T] — https://www.hyphanet.org/
+Clients — I2P Anonymous Network [T] — https://i2p.net/
+Discovery — OnionScan [T] — https://github.com/s-rah/onionscan
+Discovery — TorBot [T] — https://github.com/DedSecInside/TorBot
+Discovery — Tor Scan [T] — https://www.torscan.io/
+Discovery — Onioff [T] — https://github.com/k4m4/onioff
+Discovery — Hunchly Hidden Services Report [R] — https://darkweb.hunch.ly/
+Discovery — docker-onion-nmap [T] — https://github.com/milesrichardson/docker-onion-nmap
+Discovery — Onion Investigator — https://oint.ctrlbox.com/
+TOR Search — Onion Cab — https://onion.cab/
+TOR Search — Ahmia — https://ahmia.fi/
+TOR Directories — Hidden Wiki — https://thehiddenwiki.org/ (unverified)
+Dark Web — Web O Proxy — https://weboproxy.com/
+Dark Web — IACA Dark Web Investigation Support — https://iaca-darkweb-tools.com/
+
+# DISINFORMATION & MEDIA VERIFICATION
+Deepfake Detection — DeepFake-Detect [T] — https://github.com/dessa-oss/DeepFake-Detection
+Deepfake Detection — DeepFake-Image-Detection [T] — https://github.com/rmkemker/DeepFake-Image-Detection (unverified)
+Deepfake Detection — DeepSafe [T] — https://github.com/siddharthksah/DeepSafe
+Deepfake Detection — DeepfakeBench [T] — https://github.com/SCLBD/DeepfakeBench
+Deepfake Detection — DeepfakeDetector [T/M] — https://github.com/TRahulsingh/DeepfakeDetector
+Deepfake Detection — FaceForensics++ [R] — https://www.faceforensics.com/
+Deepfake Detection — InVID-WeVerify Verification Plugin [T] — https://www.invid-project.eu/tools-and-services/invid-verification-plugin/
+Deepfake Detection — TruthScan Deepfake Detector [R] — https://truthscan.com/
+Fact-checking Tools — Duke Reporters' Lab — https://reporterslab.org/
+Fact-checking Tools — Hoaxy — https://hoaxy.osome.iu.edu/ (unverified)
+Fact-checking Tools — PolitiFact — https://www.politifact.com/
+Fact-checking Tools — SciCheck — https://factcheck.org/scicheck/
+Fact-checking Tools — Snopes — https://www.snopes.com/
+Fact-checking Tools — Stop Fake Tools — http://www.stopfake.org/
+Reverse Media Search — ImgOps [M] — https://imgops.com/
+Reverse Media Search — TinEye Reverse Image Search [M] — https://tineye.com/
+Source Verification — FotoForensics [M] — https://fotoforensics.com/
+Source Verification — Verification Handbook — https://verificationhandbook.com/
+Source Verification — Verification Junkie — https://verificationjunkie.com/
+
+# BLOCKCHAIN & CRYPTOCURRENCY
+Bitcoin — Bitcoin Who's Who — https://www.bitcoinwhoswho.com/
+Bitcoin — BitRef — https://bitref.com/
+Bitcoin — Blockonomics — https://www.blockonomics.co/
+Bitcoin — Blockr.io — https://blockr.io/ (unverified)
+Bitcoin — Blocktrail — https://www.blocktrail.com/BTC (unverified)
+Bitcoin — Orbit [T] — https://github.com/s0md3v/Orbit
+Bitcoin — Wallet Explorer — https://www.walletexplorer.com/
+Chain Analysis Platforms — Bitcoin Abuse Database — https://bitcoinabuse.com/
+Chain Analysis Platforms — Bitcoin Who's Who — https://www.bitcoinwhoswho.com/
+Chain Analysis Platforms — BitRef — https://bitref.com/
+Chain Analysis Platforms — Blockchair — https://blockchair.com/
+Chain Analysis Platforms — Blockscan — https://blockscan.com/
+Chain Analysis Platforms — Etherscan — https://etherscan.io/
+Chain Analysis Platforms — OXT.me — https://oxt.me/
+Chain Analysis Platforms — Wallet Explorer — https://www.walletexplorer.com/
+DeFi & DEX Tracing — DefiLlama — https://defillama.com/
+DeFi & DEX Tracing — Dune Analytics — https://dune.com/
+Ethereum — Etherscan — https://etherscan.io/
+Mixer Tracking — Arkham Intelligence [R] — https://intel.arkm.com/
+Mixer Tracking — Breadcrumbs.app — https://www.breadcrumbs.app/
+Mixer Tracking — MetaSleuth [R] — https://metasleuth.io/
+Mixer Tracking — MistTrack [R] — https://misttrack.io/
+Mixer Tracking — OFAC Sanctions List Search — https://sanctionssearch.ofac.treas.gov/
+Monero — Monero Blocks — https://localmonero.co/blocks/
+Monero — XMRChain.net — https://xmrchain.net/
+Multi-Chain Explorers — Bitquery Explorer — https://explorer.bitquery.io/
+Multi-Chain Explorers — Blockchair — https://blockchair.com/
+NFT Provenance — Etherscan NFT Tracker — https://etherscan.io/nft
+NFT Provenance — OpenSea — https://opensea.io/
+Privacy Coin Analysis — XMRChain.net (Monero) — https://xmrchain.net/
+Privacy Coin Analysis — Zcash Block Explorer — https://blockchair.com/zcash
+Wallet Clustering & Address Analysis — Blockchair — https://blockchair.com/
+Wallet Clustering & Address Analysis — Wallet Explorer — https://www.walletexplorer.com/
+
+# CLASSIFIEDS
+Classifieds — Craigslist [D/M] — https://charlotte.craigslist.org/
+Classifieds — Kijiji - Canada Classifieds [D/M] — https://www.kijiji.ca:443/
+Classifieds — Quikr - India Classifieds [D/M] — https://www.quikr.com/
+Classifieds — eBay [D/M] — https://www.ebay.com/
+Classifieds — OfferUp [D/M] — https://offerup.com/
+Classifieds — Goofbid [M] — https://www.goofbid.com/
+Classifieds — SearchAllJunk [M] — https://www.searchalljunk.com/
+Classifieds — TotalCraigSearch [M] — https://www.totalcraigsearch.com/
+Classifieds — Search Tempest [M] — https://www.searchtempest.com/
+Classifieds — francais-a-londres.org - French Classifieds [D/M] — https://francaisalondres.com/
+Classifieds — Kleinanzeigen.de [D/M] — https://www.kleinanzeigen.de/
+
+# ENCODING / DECODING
+Barcodes / QR — ClearImage Barcode Reader — https://online-barcode-reader.inliteresearch.com/
+Javascript — JS Beautifier — https://beautifier.io/
+Javascript — JS NICE — https://jsnice.org/ (unverified)
+Javascript — Firebug [T] — https://getfirebug.com/downloads/
+Javascript — SpiderMonkey [T] — https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey
+Javascript — Kahu Revelo [T/R] — https://www.kahusecurity.com/tools/
+Javascript — JavaScript Deobfuscator [T] — https://addons.mozilla.org/en-US/firefox/addon/javascript-deobfuscator/
+PHP — DDecode - PHP Decoder — https://ddecode.com/phpdecoder/
+XOR > Unix — XORSearch & XORStrings [T] — https://blog.didierstevens.com/programs/xorsearch/
+XOR > Unix — xortool [T] — https://github.com/hellman/xortool
+XOR > Unix — unxor [T] — https://github.com/tomchop/unxor
+XOR > Windows — Kahu Converter Utilities [T] — https://www.kahusecurity.com/tools/
+XOR > Python — iheartxor.py [T] — https://hooked-on-mnemonics.blogspot.com/p/iheartxor.html
+XOR > Python — XORBruteForcer.py [T] — https://github.com/jesparza/scripts/blob/master/xorBruteForcer.py
+XOR > Python — NoMoreXOR.py [T] — https://github.com/hiddenillusion/NoMoreXOR
+XOR > Python — Balbuzard [T] — https://github.com/decalage2/balbuzard
+Encoding / Decoding — CyberChef [T] — https://gchq.github.io/CyberChef/
+Encoding / Decoding — Functions Online — https://www.functions-online.com/
+
+# TOOLS
+OSINT Automation — Vector [T] — https://github.com/thesaderror/vector (unverified)
+OSINT Automation — DataSploit [T/R] — https://github.com/datasploit/datasploit/ (unverified)
+OSINT Automation — Omnibus [T/R] — https://github.com/InQuest/omnibus
+OSINT Automation — Photon [T] — https://github.com/s0md3v/Photon
+OSINT Automation — ReconDog [T/R] — https://github.com/s0md3v/ReconDog
+OSINT Automation — IFTTT [R] — https://ifttt.com/
+OSINT Automation — Slash [T] — https://github.com/redc86/slash
+OSINT Automation — Stringify [R] — https://www.stringify.com/ (unverified)
+OSINT Automation — OSRFramework [T] — https://github.com/i3visio/osrframework
+OSINT Automation — Inquisitor [T] — https://github.com/penafieljlm/inquisitor (unverified)
+OSINT Automation — AutoOSINT [T/R] — https://github.com/bharshbarger/AutOSINT (unverified)
+OSINT Automation — IntRec-Pack [T] — https://github.com/NullArray/IntRec-Pack
+OSINT Automation — OSINT-SPY [T/R] — https://github.com/SharadKumar97/OSINT-SPY (unverified)
+OSINT Automation — Microsoft Flow [R] — https://flow.microsoft.com/en-us/
+OSINT Automation — PhoneInfoga [T] — https://github.com/sundowndev/PhoneInfoga
+OSINT Automation — IntelligenceX [R] — https://intelx.io/
+OSINT Automation — Scrummage [T/R] — https://github.com/matamorphosis/Scrummage
+OSINT Automation — Analyst Research Tools — https://analystresearchtools.com
+Graph Visualization — MIDINS TITAN — https://github.com/Med0-n/Midins_Titan-Osint_Tool (unverified)
+Pentesting Recon — Low Hanging Fruit [T] — https://github.com/blindfuzzy/LHF (unverified)
+Virtual Machines — VMware Workstation Player [T] — https://www.vmware.com/products/player/playerpro-evaluation.html
+Virtual Machines — VirtualBox [T] — https://www.virtualbox.org/
+Virtual Machines — Kali Linux OS [T] — https://www.kali.org/
+Virtual Machines — ParrotSec OS [T] — https://www.parrotsec.org/
+Virtual Machines — Microsoft Edge Development OS VMs [T] — https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/ (unverified)
+Virtual Machines — Subgraph OS [T] — https://subgraph.com/
+Virtual Machines — Tails Live OS [T] — https://tails.net/
+Virtual Machines — Whonix [T] — https://www.whonix.org/wiki/Main_Page
+Wordlist — CeWL [T] — https://github.com/digininja/CeWL
+Wordlist — Cupp [T] — https://github.com/Mebus/cupp
+Wordlist — OWASP D4N155 [T] — https://github.com/OWASP/D4N155
+Wordlist — W Generator — https://app.wgen.io/
+Tools — Paterva / Maltego [T/R] — https://www.maltego.com/
+Tools — Overview [T] — https://www.overviewdocs.com/
+Tools — Online Nikto scanner [R] — https://nikto.online/
+
+# AI TOOLS
+AI Tools — AI or Not — https://www.aiornot.com/
+AI Tools — Copyleaks [R] — https://copyleaks.com/
+AI Tools — Decopy AI Image Detector — https://decopy.ai/ai-image-detector/
+AI Tools — DeepAI AI Image Detector — https://deepai.org/ai-image-detector
+AI Tools — DeepSeek — https://www.deepseek.com/
+AI Tools — DocMind AI [T] — https://github.com/BjornMelin/docmind-ai-llm
+AI Tools — DuckDuckGo AI Chat — https://duckduckgo.com/aichat
+AI Tools — GPTZero — https://gptzero.me/
+AI Tools — Grammarly AI Detector — https://www.grammarly.com/ai-detector
+AI Tools — Hive AI Generated Content Detection [R] — https://hivemoderation.com/ai-generated-content-detection
+AI Tools — Hugging Face AI Detector — https://huggingface.co/spaces/umm-maybe/AI_Detector
+AI Tools — Illuminarty [R] — https://app.illuminarty.ai/
+AI Tools — Microsoft Copilot — https://copilot.microsoft.com/
+AI Tools — Ollama [T] — https://ollama.com/
+AI Tools — OSINT Analyser [T] — https://github.com/joestanding/osint-analyser
+AI Tools — TrueMedia — https://www.truemedia.org/ (unverified)
+AI Tools — WasItAI — https://wasitai.com/
+AI Tools — World Monitor [R] — https://www.worldmonitor.app/
+AI Tools — You.com [R] — https://you.com/
+
+# MALICIOUS FILE ANALYSIS
+Search — Decalage Malware Search [M] — https://decalage.info/en/mwsearch
+Search — VirusShare.com [R/M] — https://virusshare.com/
+Search — #totalhash [M] — https://totalhash.cymru.com/
+Search — VX Vault — https://vxvault.net/ViriList.php
+Search — ID Ransomware — https://id-ransomware.malwarehunterteam.com/
+Search — National Software Reference Library [M] — https://nsrl.hashsets.com/national_software_reference_library1_search.php
+Hosted Automated Analysis > Office Files — TYLabs QuickSand Framework [T] — https://scan.tylabs.com/
+Hosted Automated Analysis > Office Files — JoeSandbox Document Analyzer — https://www.joesandbox.com/
+Hosted Automated Analysis > PDFs — TYLabs QuickSand Framework [T] — https://scan.tylabs.com/
+Hosted Automated Analysis > Android — Akana Android Malware — https://akana.mobiseclab.org/
+Hosted Automated Analysis > Android — Joe APK Analyzer — https://www.apk-analyzer.net/
+Hosted Automated Analysis — VirusTotal [R] — https://www.virustotal.com/gui/
+Hosted Automated Analysis — OPSWAT Meta Defender — https://metadefender.opswat.com/#!/
+Hosted Automated Analysis — Hybrid Analysis — https://hybrid-analysis.com/
+Hosted Automated Analysis — Malware Config [M] — https://malwareconfig.com/
+Hosted Automated Analysis — MetaDefender — https://metadefender.opswat.com/
+Hosted Automated Analysis — Ether — https://ether.gtisc.gatech.edu/web_unpack/
+Hosted Automated Analysis — Jotti's Malware Scanner — https://virusscan.jotti.org/en-US/scan-file
+Hosted Automated Analysis — Valkyrie File Analysis — https://consumer.valkyrie.comodo.com/
+Hosted Automated Analysis — detux Linux Sandbox [T] — https://detux.org/
+Hosted Automated Analysis — Joe File Analyzer — https://www.file-analyzer.net/
+Hosted Automated Analysis — Pikker.ee Cuckoo Sandbox — https://sandbox.pikker.ee/
+Hosted Automated Analysis — Koodous — https://koodous.com
+Hosted Automated Analysis — Any Run — https://app.any.run/
+Hosted Automated Analysis — Uncover It — https://www.uncoverit.org/
+Office Files — Office Mal Scanner [T] — https://www.reconstructer.org/
+Office Files — OffVis [T] — https://download.microsoft.com/download/1/2/7/127ba59a-4fe1-4acd-ba47-513ceef85a85/OffVis.zip
+PDFs — PDF Tools [T] — https://blog.didierstevens.com/programs/pdf-tools/
+PDFs — Origami Framework [T] — https://code.google.com/archive/p/origami-pdf/
+PCAPs — Malware-Traffic-Analysis.net — https://www.malware-traffic-analysis.net/index.html
+Malicious File Analysis — Ghidra [T] — https://github.com/NationalSecurityAgency/ghidra
+Malicious File Analysis — Malware Analysis Tools — https://malwareanalysis.tools/
+Malicious File Analysis — virustotal [R] — https://www.virustotal.com/gui/home/upload
+
+# CYBER THREAT INTELLIGENCE
+Advisories — Vulert: Updated Open Source Vulnerability Database — https://vulert.com/vuln-db (unverified)
+Advisories — SecurityFocus — https://www.securityfocus.com/bid (unverified)
+Advisories — NVD - NIST — https://nvd.nist.gov/ (unverified)
+Advisories — OSV Vulnerability Library — https://osv.dev/list (unverified)
+Advisories — CVE Details — https://www.cvedetails.com/ (unverified)
+Advisories — CVE - MITRE — https://www.cve.org/ (unverified)
+Advisories — OWASP — https://www.owasp.org/index.php/Main_Page (unverified)
+Advisories — Secunia — https://secuniaresearch.flexerasoftware.com/community/research/ (unverified)
+Advisories — Australian Cyber Security Centre — https://www.cyber.gov.au/ (unverified)
+Advisories — Canadian Centre for Cyber Security — https://www.cyber.gc.ca/ (unverified)
+Attack Surface / Security Testing — ImmuniWeb [R] — https://www.immuniweb.com/
+Default Passwords — Default Passwords DB — https://cirt.net/passwords/ (unverified)
+Default Passwords — Default passwords list — https://default-password.info/ (unverified)
+Default Passwords — Default Password Lookup Utility — https://fortypoundhead.com/tools_dpw.asp (unverified)
+Default Passwords — Phenoelit Default Password List — https://phenoelit.org/dpl/dpl.html (unverified)
+Default Passwords — Default Router Passwords — https://www.routerpasswords.com/ (unverified)
+Default Passwords — Open Sez Me Default Passwords — https://open-sez.me/ (unverified)
+Default Passwords — Hashes.org — https://hashes.org/ (unverified)
+Exploits — Exploit DB — https://www.exploit-db.com/ (unverified)
+Exploits — Packet Storm — https://packetstormsecurity.com/ (unverified)
+IOC Tools — Jager [T] — https://github.com/sroberts/jager
+IOC Tools — IOC Parser [T] — https://github.com/armbues/ioc_parser
+IOC Tools — Cacador [T] — https://github.com/sroberts/cacador
+IOC Tools — ThreatPinch Lookup [T] — https://github.com/cloudtracer/ThreatPinchLookup
+IOC Tools — Mimir [T] — https://github.com/NullArray/Mimir
+IOC Tools — iocextract [T] — https://github.com/InQuest/iocextract
+IOC Tools — ThreatIngestor [T] — https://github.com/InQuest/ThreatIngestor
+Phishing — SecAI.ai — https://secai.ai/research
+Phishing — OpenPhish feed — https://openphish.com/feed.txt
+Phishing — PhishTank [M] — https://www.phishtank.com/
+Phishing — PhishStats — https://phishstats.info/
+Terrorism & Extremism > Academic Research — Global Terrorism Database — https://www.start.umd.edu/research-projects/global-terrorism-database-gtd
+Terrorism & Extremism > Academic Research — START Consortium for the Study of Terrorism and Responses to Terrorism — https://www.start.umd.edu/
+Terrorism & Extremism > Research Centers — CSIS Warfare, Irregular Threats, and Terrorism Program — https://www.csis.org/programs/warfare-irregular-threats-and-terrorism-program
+Terrorism & Extremism > Research Centers — Institute for Strategic Dialogue — https://www.isdglobal.org/
+Terrorism & Extremism > Research Centers — RAND Terrorism Research — https://www.rand.org/topics/terrorism.html
+Terrorism & Extremism > Sanctions & Watchlists — OFAC Sanctions List Search [M] — https://sanctionssearch.ofac.treas.gov/
+Terrorism & Extremism > Sanctions & Watchlists — OpenSanctions — https://www.opensanctions.org/
+Terrorism & Extremism > Sanctions & Watchlists — UN Security Council Consolidated List — https://main.un.org/securitycouncil/en/content/un-sc-consolidated-list
+Terrorism & Extremism > Terrorist Financing — Terrorist Finance Tracking Program — https://home.treasury.gov/policy-issues/terrorism-and-illicit-finance/terrorist-finance-tracking-program-tftp
+Threat Feeds & Platforms — IBM X-Force Exchange [R] — https://exchange.xforce.ibmcloud.com/
+Threat Feeds & Platforms — Malware Information Sharing Platform [T] — https://www.misp-project.org/
+Threat Feeds & Platforms — Malware Patrol [R] — https://www.malwarepatrol.net/
+Threat Feeds & Platforms — AlienVault OTX [R] — https://otx.alienvault.com/
+Threat Feeds & Platforms — FireHOL IP Lists — https://iplists.firehol.org/
+Threat Feeds & Platforms — Maltiverse [R] — https://maltiverse.com/
+Threat Feeds & Platforms — Malpedia [R] — https://malpedia.caad.fkie.fraunhofer.de/
+Threat Feeds & Platforms — Project Honey Pot [R] — https://www.projecthoneypot.org/
+Threat Feeds & Platforms — Cymon Open Threat Intelligence [R] — https://cymon.io/
+Threat Feeds & Platforms — mlsecproject / combine [T] — https://github.com/mlsecproject/combine
+Threat Feeds & Platforms — hostintel - keithjjones Github [T] — https://github.com/keithjjones/hostintel
+Threat Feeds & Platforms — massive-octo-spice - csirtgadgets Github [T] — https://github.com/csirtgadgets/massive-octo-spice
+Threat Feeds & Platforms — Scam Database [R] — https://www.scamdb.net/
+Threat Feeds & Platforms — Bot Scout [R] — https://botscout.com/
+Threat Feeds & Platforms — APTnotes — https://github.com/aptnotes/data
+Threat Feeds & Platforms — HoneyDB [R] — https://honeydb.io/
+Threat Feeds & Platforms — Pulsedive [R] — https://pulsedive.com/
+Threat Feeds & Platforms — Mr.Looquer IOC Feed - 1st Dual Stack Threat Feed — https://iocfeed.mrlooquer.com/
+Threat Feeds & Platforms — REScure Cyber Threat Intelligence Project — https://rescure.me/
+TTPs — Malware Exploit TTP Database — https://www.pwnmalw.re/ (unverified)
+TTPs — Mitre TTPs — https://attack.mitre.org/
+TTPs — MITRE ATT&CK — https://attack.mitre.org/ (unverified)
+
+# OP SEC
+Persona Creation — Fake Name Generator — https://www.fakenamegenerator.com/
+Persona Creation — Fake Identity Generator — https://backgroundchecks.org/justdeleteme/fake-identity-generator/
+Persona Creation — This Person Does Not Exist — https://thispersondoesnotexist.com/
+Persona Creation — Random User Generator [M] — https://randomuser.me/
+Persona Creation — Faker.js [T] — https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html (unverified)
+Anonymous Browsing > TOR — Tor Download [T] — https://www.torproject.org/download/
+Anonymous Browsing > TOR — Freenet Project [T] — https://freenetproject.org/pages/download.html
+Anonymous Browsing > TOR — I2P Anonymous Network [T] — https://geti2p.net/en/
+Anonymous Browsing > Anonymous VPNs — VPN Comparisons - That One Privacy Site — https://thatoneprivacysite.net/ (unverified)
+Anonymous Browsing > Spoof User-Agent — UserAgentString.com — https://www.useragentstring.com/pages/useragentstring.php
+Anonymous Browsing > Spoof User-Agent — WhatIsMyBrowser.com — https://www.whatismybrowser.com/
+Anonymous Browsing > Spoof User-Agent — User Agent String Decoder [M] — https://tools.tracemyip.org/user-agent-string-decoder/
+Anonymous Browsing > VPN Tests — IP / DNS Leak Detection — https://ipleak.net/
+Anonymous Browsing > VPN Tests — JonDonym — https://ip-check.info/?lang=en
+Anonymous Browsing > VPN Tests — DNS leak test — https://www.dnsleaktest.com/
+Anonymous Browsing > VPN Tests — DNS Leak Tests — https://dnsleak.com/
+Anonymous Browsing > VPN Tests — IPv6 Leak Tests — https://ipv6leak.com/
+Anonymous Browsing > VPN Tests — Email Leak Tests — https://emailipleak.com/
+Anonymous Browsing > VPN Tests — Perfect Privacy — https://www.perfect-privacy.com/check-ip/
+Anonymous Browsing > VPN Tests — WebRTC Leak Test — https://www.perfect-privacy.com/webrtc-leaktest/
+Anonymous Browsing > VPN Tests — LetMeCheck.it — https://letmecheck.it/
+Anonymous Browsing > VPN Tests — Trace My IP — https://www.tracemyip.org/
+Anonymous Browsing > Browser Tests — Browser Statistics — https://www.w3schools.com/browsers/default.asp
+Anonymous Browsing > Browser Tests — WhatsMyBrowser.org — https://www.whatsmybrowser.org/
+Anonymous Browsing > Browser Tests — What browser am I using.co — https://www.whatbrowseramiusing.co/
+Anonymous Browsing > Browser Tests — What Browser? — https://whatbrowser.org/
+Anonymous Browsing > Proxy Tests — IP2Proxy [M] — https://www.ip2proxy.com/
+Anonymous Browsing — NoScript [T] — https://noscript.net/
+Anonymous Browsing — Firefox-debloat [T] — https://github.com/amq/firefox-debloat
+Anonymous Browsing — Browser Leaks — https://browserleaks.com/
+Anonymous Browsing — Self-Destructing Cookies [T] — https://addons.mozilla.org/en-US/firefox/addon/self-destructing-cookies/
+Anonymous Browsing — BrowserSpy.dk — https://browserspy.dk/
+Anonymous Browsing — LocaBrowser.com — https://www.locabrowser.com/
+Privacy / Clean Up — Privacy Guides — https://www.privacyguides.org/en/
+Privacy / Clean Up — Just Delete Me — https://backgroundchecks.org/justdeleteme/
+Privacy / Clean Up — OptOut Credit Prescreen — https://www.optoutprescreen.com/?rf=t
+Privacy / Clean Up — Credit Freeze — https://inteltechniques.com/blog/2018/09/28/complete-credit-freeze-tutorial-update/
+Privacy / Clean Up — Fake US Identities — https://xdd2.org/
+Privacy / Clean Up — Social Media Fingerprint — https://robinlinus.github.io/socialmedia-leak/
+Privacy / Clean Up — Privacy Tools — https://www.privacytools.io/
+Privacy / Clean Up — Panopticlick — https://panopticlick.eff.org/
+Privacy / Clean Up — Intel Techniques - Hiding from the Internet — https://inteltechniques.com/data/workbook.pdf
+Privacy / Clean Up — The Many Hats Club - Privacy Resources — https://themanyhats.club/centralised-place-for-privacy-resources/
+Privacy / Clean Up — The Hitchhiker’s Guide to Online Anonymity — https://anonymousplanet.org/guide/
+Privacy / Clean Up — Awesome Opt-Out Guide 2026 — https://github.com/thumpersecure/opt-out-manual-2026
+Metadata / Style — Anonymouth - Document Anonymization [T] — https://github.com/psal/anonymouth
+Metadata / Style — MAT2 [T] — https://0xacab.org/jvoisin/mat2
+
+# DOCUMENTATION / EVIDENCE CAPTURE
+Web Browsing — Forensic OSINT [T] — https://www.forensicosint.com/
+Web Browsing — Fiddler [T/R] — https://www.telerik.com/download/fiddler
+Web Browsing — Burp Suite [T/R] — https://portswigger.net/burp/download.html
+Web Browsing — Page2Images [T/M] — https://www.page2images.com/URL-Live-Website-Screenshot-Generator
+Web Browsing — Archive.is [M] — https://archive.is/
+Web Browsing — Web Page Saver [T] — https://www.magnetforensics.com/resources/web-page-saver/
+Web Browsing — Snapper [T] — https://github.com/dxa4481/Snapper
+Web Browsing — Full Page Screen Capture Chrome Extension [T] — https://github.com/mrcoles/full-page-screen-capture-chrome-extension
+Web Browsing — EZR OSINT Sidebar [T] — https://chromewebstore.google.com/detail/ezr-osint-sidebar/joagbbgciboooipadijeaoidjjigdmof
+Screen Capture — FRAPS [T] — https://fraps.com/
+Screen Capture — ShareX [T] — https://getsharex.com/
+Screen Capture — Greenshot [T] — https://getgreenshot.org/
+Map Locations — Google Street View - Hyperlapse — https://github.com/TeehanLax/Hyperlapse.js
+Map Locations — ZeeMaps [R] — https://www.zeemaps.com/
+Documentation / Evidence Capture — Timeline JS3 [T] — https://timeline.knightlab.com/
+
+# TRAINING
+Games — GeoGuesser [R] — https://www.geoguessr.com/
+Games — Verif!cation Quiz Bot [R] — https://x.com/quiztime
+Training — Forensic OSINT KB Guides [R] — https://www.forensicosint.com/osint-guide
+Training — Open Source Intelligence Techniques [R] — https://inteltechniques.com/
+Training — Plessas [R] — https://www.plessas.net/online-training
+Training — The OSINTion [R] — https://www.theosintion.com/courses
+Training — Smart Questions — https://www.catb.org/esr/faqs/smart-questions.html

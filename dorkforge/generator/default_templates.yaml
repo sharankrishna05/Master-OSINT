@@ -1,0 +1,215 @@
+templates:
+  # 1. SENSITIVE FILES & CONFIG EXPOSURES
+  - id: sens_env_files
+    name: Environment & Credential Files
+    category: Sensitive Files
+    description: Find exposed .env, .git, and config files containing keys or database credentials
+    pattern: "site:{domain} (ext:env OR ext:yml OR ext:yaml OR ext:ini OR ext:conf) (intext:DB_PASSWORD OR intext:API_KEY OR intext:secret)"
+    required_vars: ["domain"]
+    tags: ["env", "credentials", "config"]
+
+  - id: sens_database_dumps
+    name: Database Backups & SQL Dumps
+    category: Sensitive Files
+    description: Detect exposed database backup files and SQL schema dumps
+    pattern: "site:{domain} (ext:sql OR ext:dump OR ext:tar.gz OR ext:bak OR ext:backup) (intext:\"INSERT INTO\" OR intext:\"CREATE TABLE\")"
+    required_vars: ["domain"]
+    tags: ["sql", "backup", "database"]
+
+  - id: sens_log_files
+    name: Server & Debug Logs
+    category: Sensitive Files
+    description: Detect exposed log files containing session tokens, IP traces, and exceptions
+    pattern: "site:{domain} (ext:log OR ext:txt) (inurl:log OR inurl:debug OR inurl:access) (intext:error OR intext:warning OR intext:token)"
+    required_vars: ["domain"]
+    tags: ["logs", "debug", "tokens"]
+
+  - id: sens_ssh_keys
+    name: Private Keys & Certificates
+    category: Sensitive Files
+    description: Search for accidentally published private keys, certificates, and pem files
+    pattern: "site:{domain} (ext:pem OR ext:key OR ext:pkcs12 OR ext:crt) (intext:\"BEGIN RSA PRIVATE KEY\" OR intext:\"BEGIN OPENSSH PRIVATE KEY\")"
+    required_vars: ["domain"]
+    tags: ["ssh", "crypto", "keys"]
+
+  - id: sens_git_exposure
+    name: Exposed Git & SVN Repositories
+    category: Sensitive Files
+    description: Locate publicly exposed .git/config, HEAD, or .svn directories
+    pattern: "site:{domain} (inurl:\"/.git\" OR inurl:\"/.git/HEAD\" OR inurl:\"/.git/config\" OR inurl:\"/.svn\")"
+    required_vars: ["domain"]
+    tags: ["git", "vcs", "source-code"]
+
+  # 2. LOGIN & ADMIN PANELS
+  - id: auth_admin_portals
+    name: Administrative & Management Portals
+    category: Login & Admin Panels
+    description: Identify administrative interfaces and restricted consoles
+    pattern: "site:{domain} (inurl:admin OR inurl:cpanel OR inurl:dashboard OR inurl:portal OR inurl:controlpanel)"
+    required_vars: ["domain"]
+    tags: ["admin", "portal", "console"]
+
+  - id: auth_login_pages
+    name: User & Single Sign-On Login Pages
+    category: Login & Admin Panels
+    description: Enumerate corporate SSO, LDAP, and standard authentication gateways
+    pattern: "site:{domain} (inurl:login OR inurl:signin OR inurl:auth OR inurl:oauth) (intitle:login OR intitle:signin OR intitle:\"single sign on\")"
+    required_vars: ["domain"]
+    tags: ["login", "sso", "authentication"]
+
+  - id: auth_directory_indexing
+    name: Open Directory Indexing
+    category: Login & Admin Panels
+    description: Locate open directories allowing arbitrary file traversal and index listings
+    pattern: "site:{domain} intitle:\"index of /\" (intext:\"parent directory\" OR intext:\"size\" OR intext:\"last modified\")"
+    required_vars: ["domain"]
+    tags: ["indexing", "traversal", "open-directory"]
+
+  # 3. IOT, CAMERAS & DEVOPS INFRASTRUCTURE
+  - id: infra_jenkins_ci
+    name: Jenkins CI/CD Servers
+    category: Infrastructure & DevOps
+    description: Find exposed Jenkins automation dashboards and build artifacts
+    pattern: "site:{domain} (intitle:\"Dashboard [Jenkins]\" OR inurl:jenkins OR inurl:8080/jenkins)"
+    required_vars: ["domain"]
+    tags: ["jenkins", "cicd", "devops"]
+
+  - id: infra_gitlab_github
+    name: Self-Hosted GitLab / Gitea Instances
+    category: Infrastructure & DevOps
+    description: Enumerate internal code repository platforms
+    pattern: "site:{domain} (intitle:\"Sign in · GitLab\" OR inurl:\"/users/sign_in\" OR intitle:\"Gitea: Git with a cup of tea\")"
+    required_vars: ["domain"]
+    tags: ["gitlab", "gitea", "repos"]
+
+  - id: infra_phpmyadmin
+    name: phpMyAdmin & Adminer Consoles
+    category: Infrastructure & DevOps
+    description: Identify exposed web-based database management utilities
+    pattern: "site:{domain} (inurl:phpmyadmin OR inurl:pma OR inurl:adminer.php) (intitle:phpMyAdmin OR intitle:Adminer)"
+    required_vars: ["domain"]
+    tags: ["database", "phpmyadmin", "adminer"]
+
+  - id: infra_kibana_grafana
+    name: Grafana & Kibana Observability Dashboards
+    category: Infrastructure & DevOps
+    description: Uncover exposed telemetry, metrics, and log aggregation dashboards
+    pattern: "site:{domain} (intitle:Grafana OR inurl:\"/app/kibana\" OR intitle:\"Kibana - Login\")"
+    required_vars: ["domain"]
+    tags: ["grafana", "kibana", "monitoring"]
+
+  - id: infra_iot_webcams
+    name: Network Cameras & IoT Dashboards
+    category: Infrastructure & DevOps
+    description: Detect exposed IP cameras, printer panels, and embedded web servers
+    pattern: "site:{domain} (intitle:\"Live View / - AXIS\" OR inurl:\"/view/viewer_index.shtml\" OR intitle:\"WebcamXP\" OR inurl:\"/ui/index.html\")"
+    required_vars: ["domain"]
+    tags: ["iot", "camera", "webcam"]
+
+  - id: infra_wordpress_exposure
+    name: WordPress User Enumeration & Plugins
+    category: Infrastructure & DevOps
+    description: Enumerate author archives, sensitive wp-content uploads, and wp-json APIs
+    pattern: "site:{domain} (inurl:\"/wp-json/wp/v2/users\" OR inurl:\"wp-content/uploads/\" ext:zip OR inurl:\"/wp-admin/admin-ajax.php\")"
+    required_vars: ["domain"]
+    tags: ["wordpress", "cms", "users"]
+
+  # 4. CLOUD STORAGE EXPOSURES
+  - id: cloud_aws_s3
+    name: AWS S3 Buckets Mentions
+    category: Cloud Storage
+    description: Locate Amazon S3 bucket names and publicly accessible assets linked to domain
+    pattern: "site:s3.amazonaws.com \"{domain}\" OR site:{domain} intext:\"s3.amazonaws.com\""
+    required_vars: ["domain"]
+    tags: ["aws", "s3", "cloud"]
+
+  - id: cloud_azure_blobs
+    name: Azure Blob Storage Containers
+    category: Cloud Storage
+    description: Detect Azure blob storage references and public container endpoints
+    pattern: "site:blob.core.windows.net \"{domain}\" OR site:{domain} intext:\"blob.core.windows.net\""
+    required_vars: ["domain"]
+    tags: ["azure", "blob", "cloud"]
+
+  - id: cloud_gcs_buckets
+    name: Google Cloud Storage (GCS) Buckets
+    category: Cloud Storage
+    description: Detect Google Cloud storage buckets and public files
+    pattern: "site:storage.googleapis.com \"{domain}\" OR site:{domain} intext:\"storage.googleapis.com\""
+    required_vars: ["domain"]
+    tags: ["gcp", "gcs", "cloud"]
+
+  - id: cloud_firebase_dbs
+    name: Firebase Database Endpoints
+    category: Cloud Storage
+    description: Find exposed Firebase Realtime Database JSON endpoints
+    pattern: "site:firebaseio.com \"{domain}\" OR site:{domain} intext:\"firebaseio.com\""
+    required_vars: ["domain"]
+    tags: ["firebase", "cloud", "api"]
+
+  # 5. ERROR MESSAGES & STACK TRACES
+  - id: error_stack_traces
+    name: Application Stack Traces & Exceptions
+    category: Errors & Debug
+    description: Detect verbose stack traces revealing code frameworks, paths, and internal libraries
+    pattern: "site:{domain} (intext:\"Fatal error\" OR intext:\"Traceback (most recent call last)\" OR intext:\"NullPointerException\" OR intext:\"SyntaxError\")"
+    required_vars: ["domain"]
+    tags: ["errors", "stacktrace", "debug"]
+
+  - id: error_sql_syntax
+    name: SQL Syntax Errors
+    category: Errors & Debug
+    description: Find error messages disclosing database engines, queries, or table parameters
+    pattern: "site:{domain} (intext:\"You have an error in your SQL syntax\" OR intext:\"Warning: pg_connect()\" OR intext:\"ORA-01756\" OR intext:\"SQLite3::SQLException\")"
+    required_vars: ["domain"]
+    tags: ["sql-error", "database", "injection-hint"]
+
+  - id: error_phpinfo
+    name: phpinfo() Diagnostics
+    category: Errors & Debug
+    description: Locate exposed PHP environment diagnostic pages
+    pattern: "site:{domain} (intitle:\"phpinfo()\" OR intext:\"PHP Version\" inurl:phpinfo.php)"
+    required_vars: ["domain"]
+    tags: ["phpinfo", "diagnostic", "configuration"]
+
+  # 6. API KEYS & OPEN DOCS
+  - id: api_swagger_docs
+    name: Swagger / OpenAPI Documentation
+    category: API & Documentation
+    description: Uncover public API contracts, endpoints, schemas, and staging docs
+    pattern: "site:{domain} (inurl:swagger OR inurl:api-docs OR inurl:openapi OR inurl:graphiql) (intitle:Swagger OR intitle:OpenAPI)"
+    required_vars: ["domain"]
+    tags: ["api", "swagger", "openapi"]
+
+  - id: api_postman_collections
+    name: Public Postman Collections & Environments
+    category: API & Documentation
+    description: Locate exported Postman collection JSON files with authorization headers
+    pattern: "site:{domain} (ext:json inurl:postman_collection OR intext:\"postman_id\" OR inurl:postman_environment)"
+    required_vars: ["domain"]
+    tags: ["postman", "api", "tokens"]
+
+  - id: api_cors_endpoints
+    name: Unrestricted Cross-Origin APIs
+    category: API & Documentation
+    description: Locate public AJAX JSON/XML endpoints
+    pattern: "site:{domain} (inurl:api/v1 OR inurl:api/v2 OR inurl:rest) (ext:json OR ext:xml)"
+    required_vars: ["domain"]
+    tags: ["api", "rest", "endpoints"]
+
+  # 7. SUBDOMAIN & INFRASTRUCTURE ENUMERATION
+  - id: enum_subdomains
+    name: Broad Subdomain Enumeration
+    category: Subdomains
+    description: Broadly enumerate indexed subdomains while excluding the main www host
+    pattern: "site:*.{domain} -site:www.{domain}"
+    required_vars: ["domain"]
+    tags: ["subdomains", "recon", "assets"]
+
+  - id: enum_staging_dev
+    name: Development, QA & Staging Environments
+    category: Subdomains
+    description: Find non-production environments often lacking security parity
+    pattern: "site:{domain} (inurl:dev OR inurl:stage OR inurl:test OR inurl:beta OR inurl:uat OR inurl:qa)"
+    required_vars: ["domain"]
+    tags: ["staging", "dev", "nonprod"]

@@ -1,0 +1,36 @@
+services:
+  arsenal:
+    build: .
+    container_name: nexus-osint-arsenal
+    restart: unless-stopped
+    ports:
+      - "${ARSENAL_PORT:-8080}:8080"
+    volumes:
+      - arsenal_data:/app/data
+      - arsenal_reports:/app/reports
+      - ./plugins:/app/plugins
+    environment:
+      ARSENAL_HOST: 0.0.0.0
+      ARSENAL_PORT: 8080
+      ARSENAL_DATA_DIR: /app/data
+      ARSENAL_DB: /app/data/arsenal.db
+      ARSENAL_VAULT_DB: /app/data/vault.db
+      ARSENAL_REPORTS_DIR: /app/reports
+      ARSENAL_LOGS_DIR: /app/logs
+      ARSENAL_PLUGINS: /app/plugins
+      ARSENAL_DEFAULT_KEYS: ${ARSENAL_DEFAULT_KEYS:-}
+      ARSENAL_JWT_SECRET: ${ARSENAL_JWT_SECRET:-}
+      ARSENAL_ADMIN_EMAIL: ${ARSENAL_ADMIN_EMAIL:-}
+      ARSENAL_ADMIN_PASSWORD: ${ARSENAL_ADMIN_PASSWORD:-}
+      HIBP_API_KEY: ${HIBP_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=4)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  arsenal_data:
+  arsenal_reports:

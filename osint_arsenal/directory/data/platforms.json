@@ -1,0 +1,12 @@
+[
+  {"id": "web",     "name": "Web"},
+  {"id": "linux",   "name": "Linux"},
+  {"id": "macos",   "name": "macOS"},
+  {"id": "windows", "name": "Windows"},
+  {"id": "android", "name": "Android"},
+  {"id": "ios",     "name": "iOS"},
+  {"id": "cli",     "name": "CLI"},
+  {"id": "gui",     "name": "GUI"},
+  {"id": "api",     "name": "API"},
+  {"id": "docker",  "name": "Docker"}
+]
